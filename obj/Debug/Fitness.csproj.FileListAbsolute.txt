@@ -1,0 +1,11 @@
+h:\users\ashley\documents\visual studio 2013\Projects\Fitness\bin\Debug\Fitness.exe.config
+h:\users\ashley\documents\visual studio 2013\Projects\Fitness\bin\Debug\Fitness.exe
+h:\users\ashley\documents\visual studio 2013\Projects\Fitness\bin\Debug\Fitness.pdb
+h:\users\ashley\documents\visual studio 2013\Projects\Fitness\obj\Debug\Fitness.Properties.Resources.resources
+h:\users\ashley\documents\visual studio 2013\Projects\Fitness\obj\Debug\Fitness.csproj.GenerateResource.Cache
+h:\users\ashley\documents\visual studio 2013\Projects\Fitness\obj\Debug\Fitness.exe
+h:\users\ashley\documents\visual studio 2013\Projects\Fitness\obj\Debug\Fitness.pdb
+H:\Users\Ashley\documents\visual studio 2013\Projects\Fitness\obj\Debug\Fitness.csprojResolveAssemblyReference.cache
+H:\Users\Ashley\documents\visual studio 2013\Projects\Fitness\obj\Debug\Fitness.Login.resources
+H:\Users\Ashley\documents\visual studio 2013\Projects\Fitness\bin\Debug\MaterialSkin.dll
+H:\Users\Ashley\documents\visual studio 2013\Projects\Fitness\obj\Debug\Fitness.gui.Main.resources
