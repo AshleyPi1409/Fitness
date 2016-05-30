@@ -15,6 +15,10 @@ namespace Fitness.dto
         public int role { get; set; }
 
         public bool active { get; set; }
+        public Accounts()
+        {
+                
+        }
         public Accounts(int id, string accountName, string passWord, string fullName, int role, bool active)
         {
             this.id = id;

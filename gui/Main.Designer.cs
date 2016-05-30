@@ -96,15 +96,10 @@
             this.materialSingleLineTextField12 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tblLayCal = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.materialFlatButton13 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton12 = new MaterialSkin.Controls.MaterialFlatButton();
             this.tblLayPnl = new System.Windows.Forms.TableLayoutPanel();
-            this.materialSingleLineTextField17 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialSingleLineTextField16 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialSingleLineTextField15 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialSingleLineTextField14 = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -119,6 +114,7 @@
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvBooked = new System.Windows.Forms.DataGridView();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.tabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -143,8 +139,6 @@
             this.tableLayoutPanel17.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            this.tblLayCal.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tblLayPnl.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
@@ -236,6 +230,7 @@
             this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnEdit
             // 
@@ -1170,8 +1165,6 @@
             this.tblLayCal.ColumnCount = 2;
             this.tblLayCal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
             this.tblLayCal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0F));
-            this.tblLayCal.Controls.Add(this.groupBox1, 1, 0);
-            this.tblLayCal.Controls.Add(this.button1, 0, 0);
             this.tblLayCal.Location = new System.Drawing.Point(8, 228);
             this.tblLayCal.Name = "tblLayCal";
             this.tblLayCal.RowCount = 1;
@@ -1179,45 +1172,6 @@
             this.tblLayCal.Size = new System.Drawing.Size(364, 169);
             this.tblLayCal.TabIndex = 3;
             this.tblLayCal.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel14_Paint_1);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.monthCalendar1);
-            this.groupBox1.Location = new System.Drawing.Point(127, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(240, 163);
-            this.groupBox1.TabIndex = 27;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Visible = false;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(193, 140);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(23, 19);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "-";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(0, 0);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::Fitness.Properties.Resources.icon_calendar;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 34);
-            this.button1.TabIndex = 26;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // tableLayoutPanel15
             // 
@@ -1279,7 +1233,6 @@
             this.tblLayPnl.ColumnCount = 2;
             this.tblLayPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.14286F));
             this.tblLayPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.85714F));
-            this.tblLayPnl.Controls.Add(this.materialSingleLineTextField17, 1, 5);
             this.tblLayPnl.Controls.Add(this.materialSingleLineTextField16, 1, 3);
             this.tblLayPnl.Controls.Add(this.materialSingleLineTextField15, 1, 1);
             this.tblLayPnl.Controls.Add(this.materialSingleLineTextField14, 1, 0);
@@ -1291,6 +1244,7 @@
             this.tblLayPnl.Controls.Add(this.checkBox1, 1, 4);
             this.tblLayPnl.Controls.Add(this.materialLabel20, 0, 4);
             this.tblLayPnl.Controls.Add(this.materialLabel19, 0, 5);
+            this.tblLayPnl.Controls.Add(this.datePicker, 1, 5);
             this.tblLayPnl.Location = new System.Drawing.Point(10, 9);
             this.tblLayPnl.Name = "tblLayPnl";
             this.tblLayPnl.RowCount = 6;
@@ -1303,21 +1257,6 @@
             this.tblLayPnl.Size = new System.Drawing.Size(364, 221);
             this.tblLayPnl.TabIndex = 1;
             this.tblLayPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel14_Paint);
-            // 
-            // materialSingleLineTextField17
-            // 
-            this.materialSingleLineTextField17.Depth = 0;
-            this.materialSingleLineTextField17.Hint = "";
-            this.materialSingleLineTextField17.Location = new System.Drawing.Point(120, 193);
-            this.materialSingleLineTextField17.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField17.Name = "materialSingleLineTextField17";
-            this.materialSingleLineTextField17.PasswordChar = '\0';
-            this.materialSingleLineTextField17.SelectedText = "";
-            this.materialSingleLineTextField17.SelectionLength = 0;
-            this.materialSingleLineTextField17.SelectionStart = 0;
-            this.materialSingleLineTextField17.Size = new System.Drawing.Size(235, 23);
-            this.materialSingleLineTextField17.TabIndex = 26;
-            this.materialSingleLineTextField17.UseSystemPasswordChar = false;
             // 
             // materialSingleLineTextField16
             // 
@@ -1492,6 +1431,13 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
+            // datePicker
+            // 
+            this.datePicker.Location = new System.Drawing.Point(120, 193);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(241, 20);
+            this.datePicker.TabIndex = 26;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1537,8 +1483,6 @@
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel16.PerformLayout();
             this.tabPage5.ResumeLayout(false);
-            this.tblLayCal.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
             this.tblLayPnl.ResumeLayout(false);
@@ -1619,10 +1563,6 @@
         private System.Windows.Forms.ComboBox cbbType2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TableLayoutPanel tblLayCal;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtAcc;
@@ -1637,10 +1577,10 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField10;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField11;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField12;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField17;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField16;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField15;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField14;
         private System.Windows.Forms.ComboBox cbbRole;
+        private System.Windows.Forms.DateTimePicker datePicker;
     }
 }

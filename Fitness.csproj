@@ -72,6 +72,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FitnessManagerDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="gui\Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\Dialog.Designer.cs">
+      <DependentUpon>Dialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="utils\ConnectDB.cs" />
     <Compile Include="utils\Connector.cs" />
     <Compile Include="utils\GetSource.cs" />
+    <EmbeddedResource Include="gui\Dialog.resx">
+      <DependentUpon>Dialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

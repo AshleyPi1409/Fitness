@@ -1,4 +1,5 @@
 ﻿using Fitness.dao;
+using Fitness.dto;
 using Fitness.utils;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -18,10 +19,10 @@ namespace Fitness.gui
     public partial class Main : MaterialForm
     {
         RoleDAO roleDAO = new RoleDAO();
+        AccountDAO accDAO = new AccountDAO();
         public Main()
         {
-            InitializeComponent();
-            
+            InitializeComponent();           
 
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -73,14 +74,11 @@ namespace Fitness.gui
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            tblLayCal.Width = 364;
-            groupBox1.Show();
+            
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            tblLayCal.Width = 123;
-            groupBox1.Hide();
         }
 
         private void materialSingleLineTextField7_Click(object sender, EventArgs e)
@@ -131,6 +129,20 @@ namespace Fitness.gui
                 txtCusPhone.Text = i.Cells[3].Value.ToString();
                 
             }
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            Accounts a = new Accounts();
+            a.accountName = txtAcc.Text;
+            a.fullName = txtAccName.Text;
+            a.role = Int32.Parse(cbbRole.SelectedValue.ToString());
+            Dialog dialog = new Dialog();
+            dialog.ShowDialog();
+            a.passWord = dialog.pass;
+          
+            Console.WriteLine(a.passWord);
+            accDAO.create(a);
         }
     }
 }

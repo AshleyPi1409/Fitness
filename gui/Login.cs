@@ -49,5 +49,14 @@ namespace Fitness
             }
         }
 
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            txtPass.PasswordChar = '*';
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                MessageBox.Show("The Caps Lock key is ON.");
+            }  
+        }
+
     }
 }

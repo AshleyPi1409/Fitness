@@ -103,6 +103,7 @@
             this.txtPass.Size = new System.Drawing.Size(210, 23);
             this.txtPass.TabIndex = 9;
             this.txtPass.UseSystemPasswordChar = false;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // materialLabel2
             // 
@@ -168,6 +169,7 @@
             // 
             // Login
             // 
+            this.AcceptButton = this.materialFlatButton2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 262);

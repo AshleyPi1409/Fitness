@@ -25,6 +25,8 @@ namespace Fitness.utils
                 adapter = new SqlDataAdapter(statement, connection);
                 adapter.Fill(ds);
                 dgv.DataSource = ds;
+                dgv.AllowUserToAddRows = false;
+                dgv.ReadOnly = true;
                 connection.Close();
             }
             catch (Exception ex)
