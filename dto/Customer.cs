@@ -13,6 +13,10 @@ namespace Fitness.dto
         public string address { get; set; }
         public string phone { get; set; }
 
+        public Customer()
+        {
+                
+        }
         public Customer(int id, string name, string address, string phone)
         {
             this.id = id;

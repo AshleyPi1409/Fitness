@@ -16,7 +16,7 @@ namespace Fitness.utils
             SqlConnection connection;
             SqlDataAdapter adapter;
             DataTable ds = new DataTable();
-            int i = 0;
+
 
             connection = Connector.getConnection();
             try
@@ -26,7 +26,7 @@ namespace Fitness.utils
                 adapter.Fill(ds);
                 dgv.DataSource = ds;
                 dgv.AllowUserToAddRows = false;
-                dgv.ReadOnly = true;
+                //dgv.ReadOnly = true;
                 connection.Close();
             }
             catch (Exception ex)

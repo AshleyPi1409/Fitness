@@ -15,9 +15,9 @@ namespace Fitness.dao
     {
         public readonly string READ_ALL = "SELECT * FROM Functions";
         public readonly string READ_BY_ID = "SELECT * FROM Functions WHERE ID = @id";
-        public readonly string CREATE = "INSERT INTO Functions (functionName, description, active) VALUES(@name,@des,true)";
+        public readonly string CREATE = "INSERT INTO Functions (functionName, description, active) VALUES(@name,@des,1)";
         public readonly string UPDATE = "UPDATE Functions SET functionName = @name, description = @des WHERE ID = @id";
-        public readonly string DELETE = "UPDATE Functions SET active = false WHERE ID = @id ";
+        public readonly string DELETE = "UPDATE Functions SET active = 0 WHERE ID = @id ";
 
 
 

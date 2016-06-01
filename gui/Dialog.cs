@@ -32,15 +32,12 @@ namespace Fitness.gui
                 MessageBox.Show("The Caps Lock key is ON.");
             }  
         }
-        public String showDialog()
-        {
-            
-
-        }
+       
+        
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             pass = txtPass.Text;
-         
+            this.Hide();
         }
 
         private void materialFlatButton2_Click(object sender, EventArgs e)

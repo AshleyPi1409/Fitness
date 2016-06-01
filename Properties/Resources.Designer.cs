@@ -73,6 +73,16 @@ namespace Fitness.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _72_641 {
+            get {
+                object obj = ResourceManager.GetObject("72-641", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Account_Icon_150x150 {
             get {
                 object obj = ResourceManager.GetObject("Account-Icon-150x150", resourceCulture);

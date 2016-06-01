@@ -87,6 +87,7 @@
             this.txtAcc.SelectionStart = 0;
             this.txtAcc.Size = new System.Drawing.Size(210, 23);
             this.txtAcc.TabIndex = 8;
+            this.txtAcc.Text = "admin";
             this.txtAcc.UseSystemPasswordChar = false;
             // 
             // txtPass
@@ -102,6 +103,7 @@
             this.txtPass.SelectionStart = 0;
             this.txtPass.Size = new System.Drawing.Size(210, 23);
             this.txtPass.TabIndex = 9;
+            this.txtPass.Text = "admin";
             this.txtPass.UseSystemPasswordChar = false;
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 

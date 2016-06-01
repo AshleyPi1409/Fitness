@@ -14,9 +14,9 @@ namespace Fitness.dao
     {
         public static readonly string READ_ALL = "SELECT * FROM Type";
         public readonly string READ_BY_ID = "SELECT * FROM Type WHERE ID = @id";
-        public readonly string CREATE = "INSERT INTO Type (name, description,active) VALUES(@name,@des,true)";
+        public readonly string CREATE = "INSERT INTO Type (name, description,active) VALUES(@name,@des,1)";
         public readonly string UPDATE = "UPDATE Type SET name = @name, description = @des WHERE ID = @id";
-        public readonly string DELETE = "UPDATE Type SET active=false WHERE ID = @id ";
+        public readonly string DELETE = "UPDATE Type SET active=0 WHERE ID = @id ";
 
         public List<Type> getAll()
         {

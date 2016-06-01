@@ -17,9 +17,9 @@ namespace Fitness.dao
         public static readonly string READ_ALL = "SELECT * FROM Roles";
         
         public readonly string READ_BY_ID = "SELECT * FROM Roles WHERE ID = @id";
-        public readonly string CREATE = "INSERT INTO Roles (roleName, description,active) VALUES(@name,@des,true)";
+        public readonly string CREATE = "INSERT INTO Roles (roleName, description,active) VALUES(@name,@des,1)";
         public readonly string UPDATE = "UPDATE Roles SET roleName = @name, description = @des WHERE ID = @id";
-        public readonly string DELETE = "UPDATE Roles SET active=false WHERE ID = @id ";
+        public readonly string DELETE = "UPDATE Roles SET active=0 WHERE ID = @id ";
 
 
 

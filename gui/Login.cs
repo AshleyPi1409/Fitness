@@ -1,6 +1,7 @@
 ﻿using Fitness.dao;
 using Fitness.dto;
 using Fitness.gui;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,11 @@ namespace Fitness
         public Login()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.LightGreen500, Primary.Brown800, Primary.BlueGrey500, Accent.Lime700, TextShade.BLACK);
+            txtPass.PasswordChar = '*';
         }
 
         private void materialFlatButton1_Click(object sender, EventArgs e)
@@ -51,7 +57,7 @@ namespace Fitness
 
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
-            txtPass.PasswordChar = '*';
+            
             if (Control.IsKeyLocked(Keys.CapsLock))
             {
                 MessageBox.Show("The Caps Lock key is ON.");

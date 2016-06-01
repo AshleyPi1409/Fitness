@@ -31,7 +31,8 @@
             this.tabs = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSubmit = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnDelete = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnReset = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnCreate = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnEdit = new MaterialSkin.Controls.MaterialFlatButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -65,9 +66,9 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.materialFlatButton9 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton8 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton7 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnCusDele = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnCusEdit = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnCusCreate = new MaterialSkin.Controls.MaterialFlatButton();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
@@ -88,14 +89,16 @@
             this.lbl = new MaterialSkin.Controls.MaterialLabel();
             this.materialSingleLineTextField13 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialSingleLineTextField10 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialSingleLineTextField11 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialSingleLineTextField12 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tblLayCal = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.materialFlatButton13 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton12 = new MaterialSkin.Controls.MaterialFlatButton();
@@ -111,10 +114,10 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvBooked = new System.Windows.Forms.DataGridView();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.tabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -176,11 +179,13 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.15385F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.79121F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.05494F));
-            this.tableLayoutPanel4.Controls.Add(this.btnSubmit, 2, 0);
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.Controls.Add(this.btnDelete, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnReset, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnCreate, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnEdit, 1, 0);
             this.tableLayoutPanel4.ForeColor = System.Drawing.SystemColors.ControlDark;
@@ -191,25 +196,47 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(558, 31);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
-            // btnSubmit
+            // btnDelete
             // 
-            this.btnSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubmit.AutoSize = true;
-            this.btnSubmit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSubmit.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubmit.Depth = 0;
-            this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSubmit.Location = new System.Drawing.Point(376, 6);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnSubmit.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Primary = false;
-            this.btnSubmit.Size = new System.Drawing.Size(178, 19);
-            this.btnSubmit.TabIndex = 2;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.Depth = 0;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDelete.Location = new System.Drawing.Point(282, 6);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Primary = false;
+            this.btnDelete.Size = new System.Drawing.Size(131, 19);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.AutoSize = true;
+            this.btnReset.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnReset.Depth = 0;
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnReset.Location = new System.Drawing.Point(143, 6);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnReset.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Primary = false;
+            this.btnReset.Size = new System.Drawing.Size(131, 19);
+            this.btnReset.TabIndex = 3;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnCreate
             // 
@@ -226,7 +253,7 @@
             this.btnCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Primary = false;
-            this.btnCreate.Size = new System.Drawing.Size(176, 19);
+            this.btnCreate.Size = new System.Drawing.Size(131, 19);
             this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = false;
@@ -242,15 +269,16 @@
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
             this.btnEdit.Depth = 0;
             this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnEdit.Location = new System.Drawing.Point(188, 6);
+            this.btnEdit.Location = new System.Drawing.Point(421, 6);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEdit.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Primary = false;
-            this.btnEdit.Size = new System.Drawing.Size(180, 19);
+            this.btnEdit.Size = new System.Drawing.Size(133, 19);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -274,6 +302,7 @@
             this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccount.Size = new System.Drawing.Size(759, 231);
             this.dgvAccount.TabIndex = 0;
+            this.dgvAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellContentClick);
             this.dgvAccount.SelectionChanged += new System.EventHandler(this.dgvAccount_SelectionChanged);
             // 
             // tableLayoutPanel2
@@ -693,9 +722,9 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel10.Controls.Add(this.materialFlatButton9, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.materialFlatButton8, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.materialFlatButton7, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.btnCusDele, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.btnCusEdit, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.btnCusCreate, 0, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(16, 182);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
@@ -703,65 +732,68 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(297, 45);
             this.tableLayoutPanel10.TabIndex = 6;
             // 
-            // materialFlatButton9
+            // btnCusDele
             // 
-            this.materialFlatButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnCusDele.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton9.AutoSize = true;
-            this.materialFlatButton9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton9.BackColor = System.Drawing.Color.Transparent;
-            this.materialFlatButton9.Depth = 0;
-            this.materialFlatButton9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.materialFlatButton9.Location = new System.Drawing.Point(202, 6);
-            this.materialFlatButton9.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton9.Name = "materialFlatButton9";
-            this.materialFlatButton9.Primary = false;
-            this.materialFlatButton9.Size = new System.Drawing.Size(91, 33);
-            this.materialFlatButton9.TabIndex = 3;
-            this.materialFlatButton9.Text = "Submit";
-            this.materialFlatButton9.UseVisualStyleBackColor = false;
+            this.btnCusDele.AutoSize = true;
+            this.btnCusDele.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCusDele.BackColor = System.Drawing.Color.Transparent;
+            this.btnCusDele.Depth = 0;
+            this.btnCusDele.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCusDele.Location = new System.Drawing.Point(202, 6);
+            this.btnCusDele.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCusDele.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCusDele.Name = "btnCusDele";
+            this.btnCusDele.Primary = false;
+            this.btnCusDele.Size = new System.Drawing.Size(91, 33);
+            this.btnCusDele.TabIndex = 3;
+            this.btnCusDele.Text = "Delete";
+            this.btnCusDele.UseVisualStyleBackColor = false;
+            this.btnCusDele.Click += new System.EventHandler(this.btnCusDele_Click);
             // 
-            // materialFlatButton8
+            // btnCusEdit
             // 
-            this.materialFlatButton8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnCusEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton8.AutoSize = true;
-            this.materialFlatButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton8.BackColor = System.Drawing.Color.Transparent;
-            this.materialFlatButton8.Depth = 0;
-            this.materialFlatButton8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.materialFlatButton8.Location = new System.Drawing.Point(103, 6);
-            this.materialFlatButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton8.Name = "materialFlatButton8";
-            this.materialFlatButton8.Primary = false;
-            this.materialFlatButton8.Size = new System.Drawing.Size(91, 33);
-            this.materialFlatButton8.TabIndex = 2;
-            this.materialFlatButton8.Text = "Edit";
-            this.materialFlatButton8.UseVisualStyleBackColor = false;
+            this.btnCusEdit.AutoSize = true;
+            this.btnCusEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCusEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnCusEdit.Depth = 0;
+            this.btnCusEdit.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCusEdit.Location = new System.Drawing.Point(103, 6);
+            this.btnCusEdit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCusEdit.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCusEdit.Name = "btnCusEdit";
+            this.btnCusEdit.Primary = false;
+            this.btnCusEdit.Size = new System.Drawing.Size(91, 33);
+            this.btnCusEdit.TabIndex = 2;
+            this.btnCusEdit.Text = "Edit";
+            this.btnCusEdit.UseVisualStyleBackColor = false;
+            this.btnCusEdit.Click += new System.EventHandler(this.btnCusEdit_Click);
             // 
-            // materialFlatButton7
+            // btnCusCreate
             // 
-            this.materialFlatButton7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnCusCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton7.AutoSize = true;
-            this.materialFlatButton7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton7.BackColor = System.Drawing.Color.Transparent;
-            this.materialFlatButton7.Depth = 0;
-            this.materialFlatButton7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.materialFlatButton7.Location = new System.Drawing.Point(4, 6);
-            this.materialFlatButton7.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton7.Name = "materialFlatButton7";
-            this.materialFlatButton7.Primary = false;
-            this.materialFlatButton7.Size = new System.Drawing.Size(91, 33);
-            this.materialFlatButton7.TabIndex = 1;
-            this.materialFlatButton7.Text = "Create";
-            this.materialFlatButton7.UseVisualStyleBackColor = false;
+            this.btnCusCreate.AutoSize = true;
+            this.btnCusCreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCusCreate.BackColor = System.Drawing.Color.Transparent;
+            this.btnCusCreate.Depth = 0;
+            this.btnCusCreate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCusCreate.Location = new System.Drawing.Point(4, 6);
+            this.btnCusCreate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCusCreate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCusCreate.Name = "btnCusCreate";
+            this.btnCusCreate.Primary = false;
+            this.btnCusCreate.Size = new System.Drawing.Size(91, 33);
+            this.btnCusCreate.TabIndex = 1;
+            this.btnCusCreate.Text = "Create";
+            this.btnCusCreate.UseVisualStyleBackColor = false;
+            this.btnCusCreate.Click += new System.EventHandler(this.btnCusCreate_Click);
             // 
             // tableLayoutPanel11
             // 
@@ -838,7 +870,6 @@
             this.txtCusName.Size = new System.Drawing.Size(197, 23);
             this.txtCusName.TabIndex = 16;
             this.txtCusName.UseSystemPasswordChar = false;
-            this.txtCusName.Click += new System.EventHandler(this.materialSingleLineTextField7_Click);
             // 
             // txtCusAddr
             // 
@@ -928,7 +959,7 @@
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel19.Controls.Add(this.Submit, 0, 0);
             this.tableLayoutPanel19.Controls.Add(this.Reset, 0, 0);
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(9, 352);
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(8, 378);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 1;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -972,7 +1003,7 @@
             this.Reset.Primary = false;
             this.Reset.Size = new System.Drawing.Size(167, 24);
             this.Reset.TabIndex = 1;
-            this.Reset.Text = "Create";
+            this.Reset.Text = "Paid";
             this.Reset.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel18
@@ -1047,20 +1078,36 @@
             this.tableLayoutPanel16.ColumnCount = 2;
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.47896F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.52103F));
+            this.tableLayoutPanel16.Controls.Add(this.materialLabel14, 0, 3);
             this.tableLayoutPanel16.Controls.Add(this.materialLabel13, 0, 2);
             this.tableLayoutPanel16.Controls.Add(this.materialLabel12, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.materialLabel4, 0, 1);
             this.tableLayoutPanel16.Controls.Add(this.materialSingleLineTextField10, 1, 0);
             this.tableLayoutPanel16.Controls.Add(this.materialSingleLineTextField11, 1, 1);
             this.tableLayoutPanel16.Controls.Add(this.materialSingleLineTextField12, 1, 2);
+            this.tableLayoutPanel16.Controls.Add(this.dateTimePicker1, 1, 3);
             this.tableLayoutPanel16.Location = new System.Drawing.Point(7, 164);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
-            this.tableLayoutPanel16.RowCount = 3;
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel16.RowCount = 4;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel16.Size = new System.Drawing.Size(353, 152);
             this.tableLayoutPanel16.TabIndex = 6;
+            // 
+            // materialLabel14
+            // 
+            this.materialLabel14.AutoSize = true;
+            this.materialLabel14.Depth = 0;
+            this.materialLabel14.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel14.Location = new System.Drawing.Point(3, 114);
+            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel14.Name = "materialLabel14";
+            this.materialLabel14.Size = new System.Drawing.Size(44, 19);
+            this.materialLabel14.TabIndex = 20;
+            this.materialLabel14.Text = "Date:";
             // 
             // materialLabel13
             // 
@@ -1068,7 +1115,7 @@
             this.materialLabel13.Depth = 0;
             this.materialLabel13.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel13.Location = new System.Drawing.Point(3, 100);
+            this.materialLabel13.Location = new System.Drawing.Point(3, 76);
             this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel13.Name = "materialLabel13";
             this.materialLabel13.Size = new System.Drawing.Size(55, 19);
@@ -1094,7 +1141,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(3, 50);
+            this.materialLabel4.Location = new System.Drawing.Point(3, 38);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(68, 19);
@@ -1112,7 +1159,7 @@
             this.materialSingleLineTextField10.SelectedText = "";
             this.materialSingleLineTextField10.SelectionLength = 0;
             this.materialSingleLineTextField10.SelectionStart = 0;
-            this.materialSingleLineTextField10.Size = new System.Drawing.Size(197, 23);
+            this.materialSingleLineTextField10.Size = new System.Drawing.Size(245, 23);
             this.materialSingleLineTextField10.TabIndex = 17;
             this.materialSingleLineTextField10.UseSystemPasswordChar = false;
             // 
@@ -1120,14 +1167,14 @@
             // 
             this.materialSingleLineTextField11.Depth = 0;
             this.materialSingleLineTextField11.Hint = "";
-            this.materialSingleLineTextField11.Location = new System.Drawing.Point(103, 53);
+            this.materialSingleLineTextField11.Location = new System.Drawing.Point(103, 41);
             this.materialSingleLineTextField11.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField11.Name = "materialSingleLineTextField11";
             this.materialSingleLineTextField11.PasswordChar = '\0';
             this.materialSingleLineTextField11.SelectedText = "";
             this.materialSingleLineTextField11.SelectionLength = 0;
             this.materialSingleLineTextField11.SelectionStart = 0;
-            this.materialSingleLineTextField11.Size = new System.Drawing.Size(197, 23);
+            this.materialSingleLineTextField11.Size = new System.Drawing.Size(245, 23);
             this.materialSingleLineTextField11.TabIndex = 18;
             this.materialSingleLineTextField11.UseSystemPasswordChar = false;
             // 
@@ -1135,20 +1182,28 @@
             // 
             this.materialSingleLineTextField12.Depth = 0;
             this.materialSingleLineTextField12.Hint = "";
-            this.materialSingleLineTextField12.Location = new System.Drawing.Point(103, 103);
+            this.materialSingleLineTextField12.Location = new System.Drawing.Point(103, 79);
             this.materialSingleLineTextField12.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField12.Name = "materialSingleLineTextField12";
             this.materialSingleLineTextField12.PasswordChar = '\0';
             this.materialSingleLineTextField12.SelectedText = "";
             this.materialSingleLineTextField12.SelectionLength = 0;
             this.materialSingleLineTextField12.SelectionStart = 0;
-            this.materialSingleLineTextField12.Size = new System.Drawing.Size(197, 23);
+            this.materialSingleLineTextField12.Size = new System.Drawing.Size(245, 23);
             this.materialSingleLineTextField12.TabIndex = 19;
             this.materialSingleLineTextField12.UseSystemPasswordChar = false;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Location = new System.Drawing.Point(103, 117);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(244, 20);
+            this.dateTimePicker1.TabIndex = 21;
+            // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.tblLayCal);
+            this.tabPage5.Controls.Add(this.label1);
             this.tabPage5.Controls.Add(this.tableLayoutPanel15);
             this.tabPage5.Controls.Add(this.tblLayPnl);
             this.tabPage5.Controls.Add(this.tableLayoutPanel13);
@@ -1160,18 +1215,20 @@
             this.tabPage5.Text = "Booked";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // tblLayCal
+            // label1
             // 
-            this.tblLayCal.ColumnCount = 2;
-            this.tblLayCal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tblLayCal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0F));
-            this.tblLayCal.Location = new System.Drawing.Point(8, 228);
-            this.tblLayCal.Name = "tblLayCal";
-            this.tblLayCal.RowCount = 1;
-            this.tblLayCal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblLayCal.Size = new System.Drawing.Size(364, 169);
-            this.tblLayCal.TabIndex = 3;
-            this.tblLayCal.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel14_Paint_1);
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Salmon;
+            this.label1.Image = global::Fitness.Properties.Resources._72_641;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label1.Location = new System.Drawing.Point(11, 304);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(363, 135);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "LETS US PERFECT YOUR BODY !";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tableLayoutPanel15
             // 
@@ -1180,7 +1237,7 @@
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.Controls.Add(this.materialFlatButton13, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.materialFlatButton12, 0, 0);
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(6, 397);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(11, 247);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1398,6 +1455,13 @@
             this.materialLabel19.TabIndex = 13;
             this.materialLabel19.Text = "Start Day:";
             // 
+            // datePicker
+            // 
+            this.datePicker.Location = new System.Drawing.Point(120, 193);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(241, 20);
+            this.datePicker.TabIndex = 26;
+            // 
             // tableLayoutPanel13
             // 
             this.tableLayoutPanel13.ColumnCount = 1;
@@ -1424,19 +1488,13 @@
             // 
             this.materialTabSelector1.BaseTabControl = this.tabs;
             this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.ForeColor = System.Drawing.Color.LightPink;
             this.materialTabSelector1.Location = new System.Drawing.Point(0, 26);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
             this.materialTabSelector1.Size = new System.Drawing.Size(814, 33);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // datePicker
-            // 
-            this.datePicker.Location = new System.Drawing.Point(120, 193);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(241, 20);
-            this.datePicker.TabIndex = 26;
             // 
             // Main
             // 
@@ -1521,7 +1579,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
-        private MaterialSkin.Controls.MaterialFlatButton btnSubmit;
         private MaterialSkin.Controls.MaterialFlatButton btnEdit;
         private MaterialSkin.Controls.MaterialFlatButton btnCreate;
         private System.Windows.Forms.DataGridView dgvAccount;
@@ -1550,9 +1607,9 @@
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton6;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton5;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton4;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton9;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton8;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton7;
+        private MaterialSkin.Controls.MaterialFlatButton btnCusDele;
+        private MaterialSkin.Controls.MaterialFlatButton btnCusEdit;
+        private MaterialSkin.Controls.MaterialFlatButton btnCusCreate;
         private MaterialSkin.Controls.MaterialFlatButton Submit;
         private MaterialSkin.Controls.MaterialFlatButton Reset;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton13;
@@ -1562,7 +1619,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.ComboBox cbbType2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TableLayoutPanel tblLayCal;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtAcc;
@@ -1582,5 +1638,10 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField14;
         private System.Windows.Forms.ComboBox cbbRole;
         private System.Windows.Forms.DateTimePicker datePicker;
+        private MaterialSkin.Controls.MaterialFlatButton btnReset;
+        private MaterialSkin.Controls.MaterialFlatButton btnDelete;
+        private System.Windows.Forms.Label label1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel14;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

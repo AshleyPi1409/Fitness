@@ -21,3 +21,15 @@ C:\Users\USER\Documents\baoan\obj\Debug\Fitness.gui.Main.resources
 C:\Users\USER\Documents\baoan\obj\Debug\Fitness.Properties.Resources.resources
 C:\Users\USER\Documents\baoan\obj\Debug\Fitness.csproj.GenerateResource.Cache
 C:\Users\USER\Documents\baoan\obj\Debug\Fitness.gui.Dialog.resources
+H:\Users\Ashley\Documents\Fitness\obj\Debug\Fitness.gui.Dialog.resources
+H:\Users\Ashley\Documents\Fitness\obj\Debug\Fitness.Login.resources
+H:\Users\Ashley\Documents\Fitness\obj\Debug\Fitness.gui.Main.resources
+H:\Users\Ashley\Documents\Fitness\obj\Debug\Fitness.Properties.Resources.resources
+H:\Users\Ashley\Documents\Fitness\obj\Debug\Fitness.csproj.GenerateResource.Cache
+H:\Users\Ashley\Documents\Fitness\bin\Debug\Fitness.exe.config
+H:\Users\Ashley\Documents\Fitness\bin\Debug\Fitness.exe
+H:\Users\Ashley\Documents\Fitness\bin\Debug\Fitness.pdb
+H:\Users\Ashley\Documents\Fitness\bin\Debug\MaterialSkin.dll
+H:\Users\Ashley\Documents\Fitness\obj\Debug\Fitness.exe
+H:\Users\Ashley\Documents\Fitness\obj\Debug\Fitness.pdb
+H:\Users\Ashley\Documents\Fitness\obj\Debug\Fitness.csprojResolveAssemblyReference.cache

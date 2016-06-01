@@ -15,9 +15,9 @@ namespace Fitness.dao
     {
         public static readonly string READ_ALL = "SELECT * FROM Course";
         public static readonly string READ_BY_ID = "SELECT * FROM Course WHERE ID = @id";
-        public static readonly string CREATE = "INSERT INTO Course (name, months, price, idtype, active) VALUES(@name,@month,@price,@type,true)";
+        public static readonly string CREATE = "INSERT INTO Course (name, months, price, idtype, active) VALUES(@name,@month,@price,@type,1)";
         public static readonly string UPDATE = "UPDATE Course SET name = @name,months = @month, price = @price,idtype = @type WHERE ID = @id";
-        public static readonly string DELETE = "UPDATE Course SET active = false WHERE ID = @id ";
+        public static readonly string DELETE = "UPDATE Course SET active = 0 WHERE ID = @id ";
 
         public List<Course> getAll()
         {

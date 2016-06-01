@@ -17,10 +17,10 @@ namespace Fitness.dao
 
         public static readonly string READ_ALL = "SELECT * FROM Accounts";
         public static readonly string READ_BY_ID = "SELECT * FROM Accounts WHERE ID = @id";
-        public static readonly string CREATE = "INSERT INTO Accounts (accountName, password, fullName, roleID,active) VALUES(@account,@pass,@name,@roleID,true)";
-        public static readonly string UPDATE = "UPDATE Accounts SET accountName = @account, password = @pass, fullName = @name, roleID = @roleID , active=@active WHERE ID = @id";
-        public static readonly string DELETE = "UPDATE Accounts SET active = false WHERE ID = @id ";
-
+        public static readonly string CREATE = "INSERT INTO Accounts (accountName, password, fullName, roleID,active) VALUES(@account,@pass,@name,@roleID,1)";
+        public static readonly string UPDATE = "UPDATE Accounts SET accountName = @account, password = @pass, fullName = @name, roleID = @roleID , active=1 WHERE ID = @id";
+        public static readonly string DELETE = "DELETE FROM Accounts  WHERE ID = @id ";
+        public static readonly string REACTIVE = "UPDATE Accounts SET active = 1 WHERE ID = @id ";
 
 
         public AccountDAO()
@@ -107,6 +107,7 @@ namespace Fitness.dao
             catch (Exception e)
             {
                 Console.WriteLine("khong the ket noi");
+                Console.WriteLine(e);
                 Console.WriteLine(e.StackTrace);
             }
             finally
@@ -118,7 +119,16 @@ namespace Fitness.dao
             }
         }
 
-        public void delete(Accounts acc)
+        public Accounts findByAccName(String name)
+        {
+            foreach (Accounts a in getAll())
+            {
+                if (a.accountName.Equals(name)) return a;
+            }
+            return null;
+        }
+
+        public void delete(int id)
         {
             SqlConnection con = null;
             con = Connector.getConnection();
@@ -129,7 +139,36 @@ namespace Fitness.dao
                 cmd.Connection = con;
                 cmd.CommandText = DELETE;
 
-                cmd.Parameters.Add("@id", SqlDbType.Int).Value = acc.id;
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+                int rowCount = cmd.ExecuteNonQuery();
+                Console.WriteLine("Row Count affected = " + rowCount);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("khong the ket noi");
+                Console.WriteLine(e.StackTrace);
+            }
+            finally
+            {
+                con.Close();
+                con.Dispose();
+                con = null;
+
+            }
+        }
+        public void reactive(int id)
+        {
+            SqlConnection con = null;
+            con = Connector.getConnection();
+            con.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = REACTIVE;
+
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
                 int rowCount = cmd.ExecuteNonQuery();
                 Console.WriteLine("Row Count affected = " + rowCount);
@@ -170,7 +209,7 @@ namespace Fitness.dao
             catch (Exception e)
             {
                 Console.WriteLine("khong the ket noi");
-                Console.WriteLine(e.StackTrace);   
+                Console.WriteLine(e);   
             }
             finally
             {
