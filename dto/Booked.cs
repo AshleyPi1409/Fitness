@@ -15,6 +15,10 @@ namespace Fitness.dto
         public DateTime startDay { get; set; }
         public bool paid { get; set; }
 
+        public Booked()
+        {
+
+        }
         public Booked(int id,int customer, int staff, int course, DateTime startDay, bool paid)
         {
             this.id = id;

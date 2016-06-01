@@ -19,6 +19,7 @@ namespace Fitness.gui
     public partial class Main : MaterialForm
     {
         RoleDAO roleDAO = new RoleDAO();
+        CourseDAO courseDAO = new CourseDAO();
         CustomerDAO cusDAO = new CustomerDAO();
         AccountDAO accDAO = new AccountDAO();
         public Main()
@@ -36,6 +37,7 @@ namespace Fitness.gui
             GetSource.getTableSource(CustomerDAO.READ_ALL, dgvCustomer);
             //GetSource.getTableSource(BillDAOL.READ_ALL, dgvBill);
             GetSource.getTableSource(BookedDAO.READ_ALL, dgvBooked);
+            GetSource.getTableSource(CourseDAO.READ_ALL, dgvCourse);
 
             GetSource.getComboxSource(RoleDAO.READ_ALL, cbbRole, "roleName");
             GetSource.getComboxSource(TypeDAO.READ_ALL, cbbType, "Name");
@@ -112,7 +114,7 @@ namespace Fitness.gui
                 txtCoursePrice.Text = i.Cells[3].Value.ToString();
                 String temp = i.Cells[4].Value.ToString();
 
-                cbbRole.SelectedValue = Int32.Parse(temp);
+                cbbType.SelectedValue = Int32.Parse(temp);
             }
         }
 
@@ -293,8 +295,60 @@ namespace Fitness.gui
                 a.id = id;
                 cusDAO.delete(a);
                 GetSource.getTableSource(CustomerDAO.READ_ALL, dgvCustomer);
-                MessageBox.Show("Created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Deleted", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnResetBook_Click(object sender, EventArgs e)
+        {
+            txtBookCourse.Text = "";
+            txtBookCus.Text = "";
+            txtStaff.Text = "";
+            checkBox1.Checked = false;
+        }
+
+        private void btnSubmitBook_Click(object sender, EventArgs e)
+        {
+            Booked booked = new Booked();
+           
+
+        }
+
+        private void materialFlatButton4_Click(object sender, EventArgs e)
+        {
+            Course course = new Course();
+            course.name = txtCourseName.Text;
+            course.months = Convert.ToDecimal(txtCourseMont.Text);
+            course.price = Convert.ToDecimal(txtCoursePrice.Text);
+            course.type = Convert.ToInt32(cbbType.SelectedValue);
+
+            courseDAO.create(course);
+            GetSource.getTableSource(CourseDAO.READ_ALL, dgvCourse);
+            MessageBox.Show("Created","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+            
+        }
+
+        private void cbbType_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var id = cbbType.SelectedValue.ToString();
+            int id1 = 0;
+            try
+            {
+                id1  = Convert.ToInt32(id);
+            }
+            catch (Exception ex) { }            
+            GetSource.getTableSourceFromList<Course>(courseDAO.getAllByTypeID(id1),dgvCourse);
+        }
+
+        private void btnResetCourse_Click(object sender, EventArgs e)
+        {
+     
+            txtCourseMont.Text = "";
+            txtCourseName.Text = "";
+            txtCoursePrice.Text = "";
+            cbbType.SelectedIndex = -1;
+
         }
 
 

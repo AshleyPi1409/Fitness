@@ -14,7 +14,10 @@ namespace Fitness.dto
         public decimal price { get; set; }
         public int type { get; set; }
         public bool active { get; set; }
+        public Course()
+        {
 
+        }
         public Course(int id , string name, decimal months, decimal price, int type, bool active)
         {
             this.id = id;

@@ -48,9 +48,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.materialFlatButton6 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton5 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton4 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnResetCourse = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnEditCourse = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnCreateCourse = new MaterialSkin.Controls.MaterialFlatButton();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.txtCoursePrice = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCourseMont = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -100,12 +100,12 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.materialFlatButton13 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton12 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnSubmitBook = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnResetBook = new MaterialSkin.Controls.MaterialFlatButton();
             this.tblLayPnl = new System.Windows.Forms.TableLayoutPanel();
-            this.materialSingleLineTextField16 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField15 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField14 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtBookCourse = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtStaff = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtBookCus = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
@@ -455,9 +455,9 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel8.Controls.Add(this.materialFlatButton6, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.materialFlatButton5, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.materialFlatButton4, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.btnResetCourse, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.btnEditCourse, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.btnCreateCourse, 0, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(8, 233);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
@@ -465,65 +465,67 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(297, 44);
             this.tableLayoutPanel8.TabIndex = 3;
             // 
-            // materialFlatButton6
+            // btnResetCourse
             // 
-            this.materialFlatButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnResetCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton6.AutoSize = true;
-            this.materialFlatButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton6.BackColor = System.Drawing.Color.Transparent;
-            this.materialFlatButton6.Depth = 0;
-            this.materialFlatButton6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.materialFlatButton6.Location = new System.Drawing.Point(202, 6);
-            this.materialFlatButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton6.Name = "materialFlatButton6";
-            this.materialFlatButton6.Primary = false;
-            this.materialFlatButton6.Size = new System.Drawing.Size(91, 32);
-            this.materialFlatButton6.TabIndex = 3;
-            this.materialFlatButton6.Text = "Submit";
-            this.materialFlatButton6.UseVisualStyleBackColor = false;
+            this.btnResetCourse.AutoSize = true;
+            this.btnResetCourse.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnResetCourse.BackColor = System.Drawing.Color.Transparent;
+            this.btnResetCourse.Depth = 0;
+            this.btnResetCourse.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnResetCourse.Location = new System.Drawing.Point(202, 6);
+            this.btnResetCourse.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnResetCourse.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnResetCourse.Name = "btnResetCourse";
+            this.btnResetCourse.Primary = false;
+            this.btnResetCourse.Size = new System.Drawing.Size(91, 32);
+            this.btnResetCourse.TabIndex = 3;
+            this.btnResetCourse.Text = "Reset";
+            this.btnResetCourse.UseVisualStyleBackColor = false;
+            this.btnResetCourse.Click += new System.EventHandler(this.btnResetCourse_Click);
             // 
-            // materialFlatButton5
+            // btnEditCourse
             // 
-            this.materialFlatButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnEditCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton5.AutoSize = true;
-            this.materialFlatButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton5.BackColor = System.Drawing.Color.Transparent;
-            this.materialFlatButton5.Depth = 0;
-            this.materialFlatButton5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.materialFlatButton5.Location = new System.Drawing.Point(103, 6);
-            this.materialFlatButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton5.Name = "materialFlatButton5";
-            this.materialFlatButton5.Primary = false;
-            this.materialFlatButton5.Size = new System.Drawing.Size(91, 32);
-            this.materialFlatButton5.TabIndex = 2;
-            this.materialFlatButton5.Text = "Edit";
-            this.materialFlatButton5.UseVisualStyleBackColor = false;
+            this.btnEditCourse.AutoSize = true;
+            this.btnEditCourse.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEditCourse.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditCourse.Depth = 0;
+            this.btnEditCourse.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnEditCourse.Location = new System.Drawing.Point(103, 6);
+            this.btnEditCourse.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEditCourse.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEditCourse.Name = "btnEditCourse";
+            this.btnEditCourse.Primary = false;
+            this.btnEditCourse.Size = new System.Drawing.Size(91, 32);
+            this.btnEditCourse.TabIndex = 2;
+            this.btnEditCourse.Text = "Edit";
+            this.btnEditCourse.UseVisualStyleBackColor = false;
             // 
-            // materialFlatButton4
+            // btnCreateCourse
             // 
-            this.materialFlatButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnCreateCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton4.AutoSize = true;
-            this.materialFlatButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton4.BackColor = System.Drawing.Color.Transparent;
-            this.materialFlatButton4.Depth = 0;
-            this.materialFlatButton4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.materialFlatButton4.Location = new System.Drawing.Point(4, 6);
-            this.materialFlatButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton4.Name = "materialFlatButton4";
-            this.materialFlatButton4.Primary = false;
-            this.materialFlatButton4.Size = new System.Drawing.Size(91, 32);
-            this.materialFlatButton4.TabIndex = 1;
-            this.materialFlatButton4.Text = "Create";
-            this.materialFlatButton4.UseVisualStyleBackColor = false;
+            this.btnCreateCourse.AutoSize = true;
+            this.btnCreateCourse.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCreateCourse.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateCourse.Depth = 0;
+            this.btnCreateCourse.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCreateCourse.Location = new System.Drawing.Point(4, 6);
+            this.btnCreateCourse.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCreateCourse.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCreateCourse.Name = "btnCreateCourse";
+            this.btnCreateCourse.Primary = false;
+            this.btnCreateCourse.Size = new System.Drawing.Size(91, 32);
+            this.btnCreateCourse.TabIndex = 1;
+            this.btnCreateCourse.Text = "Create";
+            this.btnCreateCourse.UseVisualStyleBackColor = false;
+            this.btnCreateCourse.Click += new System.EventHandler(this.materialFlatButton4_Click);
             // 
             // tableLayoutPanel7
             // 
@@ -665,6 +667,7 @@
             this.cbbType.Name = "cbbType";
             this.cbbType.Size = new System.Drawing.Size(196, 21);
             this.cbbType.TabIndex = 10;
+            this.cbbType.SelectedValueChanged += new System.EventHandler(this.cbbType_SelectedValueChanged);
             // 
             // tableLayoutPanel5
             // 
@@ -1220,7 +1223,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Salmon;
+            this.label1.ForeColor = System.Drawing.Color.Green;
             this.label1.Image = global::Fitness.Properties.Resources._72_641;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label1.Location = new System.Drawing.Point(11, 304);
@@ -1235,8 +1238,8 @@
             this.tableLayoutPanel15.ColumnCount = 2;
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.Controls.Add(this.materialFlatButton13, 0, 0);
-            this.tableLayoutPanel15.Controls.Add(this.materialFlatButton12, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.btnSubmitBook, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.btnResetBook, 0, 0);
             this.tableLayoutPanel15.Location = new System.Drawing.Point(11, 247);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
@@ -1244,45 +1247,47 @@
             this.tableLayoutPanel15.Size = new System.Drawing.Size(363, 43);
             this.tableLayoutPanel15.TabIndex = 2;
             // 
-            // materialFlatButton13
+            // btnSubmitBook
             // 
-            this.materialFlatButton13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnSubmitBook.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton13.AutoSize = true;
-            this.materialFlatButton13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton13.BackColor = System.Drawing.Color.Transparent;
-            this.materialFlatButton13.Depth = 0;
-            this.materialFlatButton13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.materialFlatButton13.Location = new System.Drawing.Point(185, 6);
-            this.materialFlatButton13.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton13.Name = "materialFlatButton13";
-            this.materialFlatButton13.Primary = false;
-            this.materialFlatButton13.Size = new System.Drawing.Size(174, 31);
-            this.materialFlatButton13.TabIndex = 2;
-            this.materialFlatButton13.Text = "Submit";
-            this.materialFlatButton13.UseVisualStyleBackColor = false;
+            this.btnSubmitBook.AutoSize = true;
+            this.btnSubmitBook.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSubmitBook.BackColor = System.Drawing.Color.Transparent;
+            this.btnSubmitBook.Depth = 0;
+            this.btnSubmitBook.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSubmitBook.Location = new System.Drawing.Point(185, 6);
+            this.btnSubmitBook.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSubmitBook.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSubmitBook.Name = "btnSubmitBook";
+            this.btnSubmitBook.Primary = false;
+            this.btnSubmitBook.Size = new System.Drawing.Size(174, 31);
+            this.btnSubmitBook.TabIndex = 2;
+            this.btnSubmitBook.Text = "Submit";
+            this.btnSubmitBook.UseVisualStyleBackColor = false;
+            this.btnSubmitBook.Click += new System.EventHandler(this.btnSubmitBook_Click);
             // 
-            // materialFlatButton12
+            // btnResetBook
             // 
-            this.materialFlatButton12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnResetBook.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton12.AutoSize = true;
-            this.materialFlatButton12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton12.BackColor = System.Drawing.Color.Transparent;
-            this.materialFlatButton12.Depth = 0;
-            this.materialFlatButton12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.materialFlatButton12.Location = new System.Drawing.Point(4, 6);
-            this.materialFlatButton12.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton12.Name = "materialFlatButton12";
-            this.materialFlatButton12.Primary = false;
-            this.materialFlatButton12.Size = new System.Drawing.Size(173, 31);
-            this.materialFlatButton12.TabIndex = 1;
-            this.materialFlatButton12.Text = "Reset";
-            this.materialFlatButton12.UseVisualStyleBackColor = false;
+            this.btnResetBook.AutoSize = true;
+            this.btnResetBook.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnResetBook.BackColor = System.Drawing.Color.Transparent;
+            this.btnResetBook.Depth = 0;
+            this.btnResetBook.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnResetBook.Location = new System.Drawing.Point(4, 6);
+            this.btnResetBook.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnResetBook.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnResetBook.Name = "btnResetBook";
+            this.btnResetBook.Primary = false;
+            this.btnResetBook.Size = new System.Drawing.Size(173, 31);
+            this.btnResetBook.TabIndex = 1;
+            this.btnResetBook.Text = "Reset";
+            this.btnResetBook.UseVisualStyleBackColor = false;
+            this.btnResetBook.Click += new System.EventHandler(this.btnResetBook_Click);
             // 
             // tblLayPnl
             // 
@@ -1290,9 +1295,9 @@
             this.tblLayPnl.ColumnCount = 2;
             this.tblLayPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.14286F));
             this.tblLayPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.85714F));
-            this.tblLayPnl.Controls.Add(this.materialSingleLineTextField16, 1, 3);
-            this.tblLayPnl.Controls.Add(this.materialSingleLineTextField15, 1, 1);
-            this.tblLayPnl.Controls.Add(this.materialSingleLineTextField14, 1, 0);
+            this.tblLayPnl.Controls.Add(this.txtBookCourse, 1, 3);
+            this.tblLayPnl.Controls.Add(this.txtStaff, 1, 1);
+            this.tblLayPnl.Controls.Add(this.txtBookCus, 1, 0);
             this.tblLayPnl.Controls.Add(this.materialLabel15, 0, 0);
             this.tblLayPnl.Controls.Add(this.materialLabel16, 0, 1);
             this.tblLayPnl.Controls.Add(this.materialLabel17, 0, 2);
@@ -1315,50 +1320,50 @@
             this.tblLayPnl.TabIndex = 1;
             this.tblLayPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel14_Paint);
             // 
-            // materialSingleLineTextField16
+            // txtBookCourse
             // 
-            this.materialSingleLineTextField16.Depth = 0;
-            this.materialSingleLineTextField16.Hint = "";
-            this.materialSingleLineTextField16.Location = new System.Drawing.Point(120, 120);
-            this.materialSingleLineTextField16.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField16.Name = "materialSingleLineTextField16";
-            this.materialSingleLineTextField16.PasswordChar = '\0';
-            this.materialSingleLineTextField16.SelectedText = "";
-            this.materialSingleLineTextField16.SelectionLength = 0;
-            this.materialSingleLineTextField16.SelectionStart = 0;
-            this.materialSingleLineTextField16.Size = new System.Drawing.Size(235, 23);
-            this.materialSingleLineTextField16.TabIndex = 25;
-            this.materialSingleLineTextField16.UseSystemPasswordChar = false;
+            this.txtBookCourse.Depth = 0;
+            this.txtBookCourse.Hint = "";
+            this.txtBookCourse.Location = new System.Drawing.Point(120, 120);
+            this.txtBookCourse.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBookCourse.Name = "txtBookCourse";
+            this.txtBookCourse.PasswordChar = '\0';
+            this.txtBookCourse.SelectedText = "";
+            this.txtBookCourse.SelectionLength = 0;
+            this.txtBookCourse.SelectionStart = 0;
+            this.txtBookCourse.Size = new System.Drawing.Size(235, 23);
+            this.txtBookCourse.TabIndex = 25;
+            this.txtBookCourse.UseSystemPasswordChar = false;
             // 
-            // materialSingleLineTextField15
+            // txtStaff
             // 
-            this.materialSingleLineTextField15.Depth = 0;
-            this.materialSingleLineTextField15.Hint = "";
-            this.materialSingleLineTextField15.Location = new System.Drawing.Point(120, 40);
-            this.materialSingleLineTextField15.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField15.Name = "materialSingleLineTextField15";
-            this.materialSingleLineTextField15.PasswordChar = '\0';
-            this.materialSingleLineTextField15.SelectedText = "";
-            this.materialSingleLineTextField15.SelectionLength = 0;
-            this.materialSingleLineTextField15.SelectionStart = 0;
-            this.materialSingleLineTextField15.Size = new System.Drawing.Size(235, 23);
-            this.materialSingleLineTextField15.TabIndex = 24;
-            this.materialSingleLineTextField15.UseSystemPasswordChar = false;
+            this.txtStaff.Depth = 0;
+            this.txtStaff.Hint = "";
+            this.txtStaff.Location = new System.Drawing.Point(120, 40);
+            this.txtStaff.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtStaff.Name = "txtStaff";
+            this.txtStaff.PasswordChar = '\0';
+            this.txtStaff.SelectedText = "";
+            this.txtStaff.SelectionLength = 0;
+            this.txtStaff.SelectionStart = 0;
+            this.txtStaff.Size = new System.Drawing.Size(235, 23);
+            this.txtStaff.TabIndex = 24;
+            this.txtStaff.UseSystemPasswordChar = false;
             // 
-            // materialSingleLineTextField14
+            // txtBookCus
             // 
-            this.materialSingleLineTextField14.Depth = 0;
-            this.materialSingleLineTextField14.Hint = "";
-            this.materialSingleLineTextField14.Location = new System.Drawing.Point(120, 3);
-            this.materialSingleLineTextField14.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField14.Name = "materialSingleLineTextField14";
-            this.materialSingleLineTextField14.PasswordChar = '\0';
-            this.materialSingleLineTextField14.SelectedText = "";
-            this.materialSingleLineTextField14.SelectionLength = 0;
-            this.materialSingleLineTextField14.SelectionStart = 0;
-            this.materialSingleLineTextField14.Size = new System.Drawing.Size(235, 23);
-            this.materialSingleLineTextField14.TabIndex = 23;
-            this.materialSingleLineTextField14.UseSystemPasswordChar = false;
+            this.txtBookCus.Depth = 0;
+            this.txtBookCus.Hint = "";
+            this.txtBookCus.Location = new System.Drawing.Point(120, 3);
+            this.txtBookCus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBookCus.Name = "txtBookCus";
+            this.txtBookCus.PasswordChar = '\0';
+            this.txtBookCus.SelectedText = "";
+            this.txtBookCus.SelectionLength = 0;
+            this.txtBookCus.SelectionStart = 0;
+            this.txtBookCus.Size = new System.Drawing.Size(235, 23);
+            this.txtBookCus.TabIndex = 23;
+            this.txtBookCus.UseSystemPasswordChar = false;
             // 
             // materialLabel15
             // 
@@ -1604,16 +1609,16 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
         private System.Windows.Forms.DataGridView dgvBooked;
         private System.Windows.Forms.ComboBox cbbType;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton6;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton5;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton4;
+        private MaterialSkin.Controls.MaterialFlatButton btnResetCourse;
+        private MaterialSkin.Controls.MaterialFlatButton btnEditCourse;
+        private MaterialSkin.Controls.MaterialFlatButton btnCreateCourse;
         private MaterialSkin.Controls.MaterialFlatButton btnCusDele;
         private MaterialSkin.Controls.MaterialFlatButton btnCusEdit;
         private MaterialSkin.Controls.MaterialFlatButton btnCusCreate;
         private MaterialSkin.Controls.MaterialFlatButton Submit;
         private MaterialSkin.Controls.MaterialFlatButton Reset;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton13;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton12;
+        private MaterialSkin.Controls.MaterialFlatButton btnSubmitBook;
+        private MaterialSkin.Controls.MaterialFlatButton btnResetBook;
         private MaterialSkin.Controls.MaterialLabel lbl;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
@@ -1633,9 +1638,9 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField10;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField11;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField12;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField16;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField15;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField14;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtBookCourse;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtStaff;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtBookCus;
         private System.Windows.Forms.ComboBox cbbRole;
         private System.Windows.Forms.DateTimePicker datePicker;
         private MaterialSkin.Controls.MaterialFlatButton btnReset;

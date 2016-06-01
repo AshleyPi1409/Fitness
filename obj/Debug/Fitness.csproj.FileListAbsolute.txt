@@ -33,3 +33,15 @@ H:\Users\Ashley\Documents\Fitness\bin\Debug\MaterialSkin.dll
 H:\Users\Ashley\Documents\Fitness\obj\Debug\Fitness.exe
 H:\Users\Ashley\Documents\Fitness\obj\Debug\Fitness.pdb
 H:\Users\Ashley\Documents\Fitness\obj\Debug\Fitness.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\FitnessManager\bin\Debug\Fitness.exe.config
+C:\xampp\htdocs\FitnessManager\obj\Debug\Fitness.exe
+C:\xampp\htdocs\FitnessManager\obj\Debug\Fitness.pdb
+C:\xampp\htdocs\FitnessManager\bin\Debug\Fitness.exe
+C:\xampp\htdocs\FitnessManager\bin\Debug\Fitness.pdb
+C:\xampp\htdocs\FitnessManager\bin\Debug\MaterialSkin.dll
+C:\xampp\htdocs\FitnessManager\obj\Debug\Fitness.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\FitnessManager\obj\Debug\Fitness.gui.Dialog.resources
+C:\xampp\htdocs\FitnessManager\obj\Debug\Fitness.Login.resources
+C:\xampp\htdocs\FitnessManager\obj\Debug\Fitness.gui.Main.resources
+C:\xampp\htdocs\FitnessManager\obj\Debug\Fitness.Properties.Resources.resources
+C:\xampp\htdocs\FitnessManager\obj\Debug\Fitness.csproj.GenerateResource.Cache
