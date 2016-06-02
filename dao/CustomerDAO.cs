@@ -113,7 +113,7 @@ namespace Fitness.dao
             catch (Exception e)
             {
                 Console.WriteLine("khong the ket noi");
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(e);
             }
             finally
             {

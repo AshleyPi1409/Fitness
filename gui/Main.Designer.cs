@@ -103,9 +103,8 @@
             this.btnSubmitBook = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnResetBook = new MaterialSkin.Controls.MaterialFlatButton();
             this.tblLayPnl = new System.Windows.Forms.TableLayoutPanel();
-            this.txtBookCourse = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.cbBookCourse = new System.Windows.Forms.ComboBox();
             this.txtStaff = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtBookCus = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
@@ -115,6 +114,7 @@
             this.materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.cbbBookCus = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvBooked = new System.Windows.Forms.DataGridView();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
@@ -505,6 +505,7 @@
             this.btnEditCourse.TabIndex = 2;
             this.btnEditCourse.Text = "Edit";
             this.btnEditCourse.UseVisualStyleBackColor = false;
+            this.btnEditCourse.Click += new System.EventHandler(this.btnEditCourse_Click);
             // 
             // btnCreateCourse
             // 
@@ -690,6 +691,7 @@
             this.dgvCourse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCourse.Size = new System.Drawing.Size(463, 420);
             this.dgvCourse.TabIndex = 1;
+            this.dgvCourse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourse_CellContentClick);
             this.dgvCourse.SelectionChanged += new System.EventHandler(this.dgvCourse_SelectionChanged);
             // 
             // tabPage3
@@ -1295,9 +1297,8 @@
             this.tblLayPnl.ColumnCount = 2;
             this.tblLayPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.14286F));
             this.tblLayPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.85714F));
-            this.tblLayPnl.Controls.Add(this.txtBookCourse, 1, 3);
+            this.tblLayPnl.Controls.Add(this.cbBookCourse, 1, 3);
             this.tblLayPnl.Controls.Add(this.txtStaff, 1, 1);
-            this.tblLayPnl.Controls.Add(this.txtBookCus, 1, 0);
             this.tblLayPnl.Controls.Add(this.materialLabel15, 0, 0);
             this.tblLayPnl.Controls.Add(this.materialLabel16, 0, 1);
             this.tblLayPnl.Controls.Add(this.materialLabel17, 0, 2);
@@ -1307,6 +1308,7 @@
             this.tblLayPnl.Controls.Add(this.materialLabel20, 0, 4);
             this.tblLayPnl.Controls.Add(this.materialLabel19, 0, 5);
             this.tblLayPnl.Controls.Add(this.datePicker, 1, 5);
+            this.tblLayPnl.Controls.Add(this.cbbBookCus, 1, 0);
             this.tblLayPnl.Location = new System.Drawing.Point(10, 9);
             this.tblLayPnl.Name = "tblLayPnl";
             this.tblLayPnl.RowCount = 6;
@@ -1316,24 +1318,18 @@
             this.tblLayPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.767442F));
             this.tblLayPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.735751F));
             this.tblLayPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.217617F));
+            this.tblLayPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblLayPnl.Size = new System.Drawing.Size(364, 221);
             this.tblLayPnl.TabIndex = 1;
             this.tblLayPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel14_Paint);
             // 
-            // txtBookCourse
+            // cbBookCourse
             // 
-            this.txtBookCourse.Depth = 0;
-            this.txtBookCourse.Hint = "";
-            this.txtBookCourse.Location = new System.Drawing.Point(120, 120);
-            this.txtBookCourse.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtBookCourse.Name = "txtBookCourse";
-            this.txtBookCourse.PasswordChar = '\0';
-            this.txtBookCourse.SelectedText = "";
-            this.txtBookCourse.SelectionLength = 0;
-            this.txtBookCourse.SelectionStart = 0;
-            this.txtBookCourse.Size = new System.Drawing.Size(235, 23);
-            this.txtBookCourse.TabIndex = 25;
-            this.txtBookCourse.UseSystemPasswordChar = false;
+            this.cbBookCourse.FormattingEnabled = true;
+            this.cbBookCourse.Location = new System.Drawing.Point(120, 120);
+            this.cbBookCourse.Name = "cbBookCourse";
+            this.cbBookCourse.Size = new System.Drawing.Size(241, 21);
+            this.cbBookCourse.TabIndex = 28;
             // 
             // txtStaff
             // 
@@ -1349,21 +1345,6 @@
             this.txtStaff.Size = new System.Drawing.Size(235, 23);
             this.txtStaff.TabIndex = 24;
             this.txtStaff.UseSystemPasswordChar = false;
-            // 
-            // txtBookCus
-            // 
-            this.txtBookCus.Depth = 0;
-            this.txtBookCus.Hint = "";
-            this.txtBookCus.Location = new System.Drawing.Point(120, 3);
-            this.txtBookCus.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtBookCus.Name = "txtBookCus";
-            this.txtBookCus.PasswordChar = '\0';
-            this.txtBookCus.SelectedText = "";
-            this.txtBookCus.SelectionLength = 0;
-            this.txtBookCus.SelectionStart = 0;
-            this.txtBookCus.Size = new System.Drawing.Size(235, 23);
-            this.txtBookCus.TabIndex = 23;
-            this.txtBookCus.UseSystemPasswordChar = false;
             // 
             // materialLabel15
             // 
@@ -1424,6 +1405,7 @@
             this.cbbType2.Name = "cbbType2";
             this.cbbType2.Size = new System.Drawing.Size(241, 21);
             this.cbbType2.TabIndex = 21;
+            this.cbbType2.SelectedValueChanged += new System.EventHandler(this.cbbType2_SelectedValueChanged);
             // 
             // checkBox1
             // 
@@ -1466,6 +1448,14 @@
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(241, 20);
             this.datePicker.TabIndex = 26;
+            // 
+            // cbbBookCus
+            // 
+            this.cbbBookCus.FormattingEnabled = true;
+            this.cbbBookCus.Location = new System.Drawing.Point(120, 3);
+            this.cbbBookCus.Name = "cbbBookCus";
+            this.cbbBookCus.Size = new System.Drawing.Size(240, 21);
+            this.cbbBookCus.TabIndex = 27;
             // 
             // tableLayoutPanel13
             // 
@@ -1638,9 +1628,7 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField10;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField11;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField12;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtBookCourse;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtStaff;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtBookCus;
         private System.Windows.Forms.ComboBox cbbRole;
         private System.Windows.Forms.DateTimePicker datePicker;
         private MaterialSkin.Controls.MaterialFlatButton btnReset;
@@ -1648,5 +1636,7 @@
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialLabel materialLabel14;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cbbBookCus;
+        private System.Windows.Forms.ComboBox cbBookCourse;
     }
 }

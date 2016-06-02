@@ -43,11 +43,15 @@ namespace Fitness
 
             if (temp.passWord.Equals(pass))
             {
-                txtAcc.Text = "";
-                txtPass.Text = "";
-                MessageBox.Show("Login sucessfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Main myMain = new Main();
-                myMain.Show();
+                if (temp.active == true)
+                {
+                    txtAcc.Text = "";
+                    txtPass.Text = "";
+                    MessageBox.Show("Login sucessfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Main myMain = new Main(acc);
+                    myMain.Show();
+                }
+                else MessageBox.Show("Your Account is deactived");
             }
             else
             {

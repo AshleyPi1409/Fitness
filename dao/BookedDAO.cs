@@ -13,6 +13,7 @@ namespace Fitness.dao
 {
     class BookedDAO
     {
+        public static readonly string SPECIAL = "select a.id, b.fullname, c.name, a.startday,a.paid from Booked a , Customer b, Course c where a.customer = b.ID and a.course = c.ID ";
         public static readonly string READ_ALL = "SELECT * FROM Booked";
         public readonly string READ_BY_ID = "SELECT * FROM Booked WHERE ID = @id";
         public readonly string CREATE = "INSERT INTO Booked (customer, staff, course, startday,paid) VALUES(@cus,@staff,@course,@day,@paid)";

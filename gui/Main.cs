@@ -22,7 +22,9 @@ namespace Fitness.gui
         CourseDAO courseDAO = new CourseDAO();
         CustomerDAO cusDAO = new CustomerDAO();
         AccountDAO accDAO = new AccountDAO();
-        public Main()
+        BookedDAO bkDAO = new BookedDAO();
+        Accounts curent;
+        public Main(String acc)
         {
             InitializeComponent();
 
@@ -30,21 +32,21 @@ namespace Fitness.gui
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.LightGreen500, Primary.Brown800, Primary.BlueGrey500, Accent.Orange100, TextShade.BLACK);
-            
 
+            curent = accDAO.getAllByAccount(acc);
 
             GetSource.getTableSource(AccountDAO.READ_ALL, dgvAccount);
             GetSource.getTableSource(CustomerDAO.READ_ALL, dgvCustomer);
             //GetSource.getTableSource(BillDAOL.READ_ALL, dgvBill);
-            GetSource.getTableSource(BookedDAO.READ_ALL, dgvBooked);
+            GetSource.getTableSource(BookedDAO.SPECIAL, dgvBooked);
             GetSource.getTableSource(CourseDAO.READ_ALL, dgvCourse);
 
             GetSource.getComboxSource(RoleDAO.READ_ALL, cbbRole, "roleName");
             GetSource.getComboxSource(TypeDAO.READ_ALL, cbbType, "Name");
             GetSource.getComboxSource(TypeDAO.READ_ALL, cbbType2, "Name");
-
+            GetSource.getComboxSource(CustomerDAO.READ_ALL, cbbBookCus, "fullName");
             cbbRole.SelectedIndex = -1;
-
+            txtStaff.Text = curent.accountName;
 
         }
 
@@ -254,6 +256,7 @@ namespace Fitness.gui
             a.phone = txtCusPhone.Text;
             cusDAO.create(a);
             GetSource.getTableSource(CustomerDAO.READ_ALL, dgvCustomer);
+            GetSource.getComboxSource(CustomerDAO.READ_ALL, cbbBookCus, "fullName");
             MessageBox.Show("Created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -301,8 +304,9 @@ namespace Fitness.gui
 
         private void btnResetBook_Click(object sender, EventArgs e)
         {
-            txtBookCourse.Text = "";
-            txtBookCus.Text = "";
+            cbBookCourse.SelectedIndex = -1;
+            cbbBookCus.SelectedIndex = -1;
+            cbbType2.SelectedIndex = -1;
             txtStaff.Text = "";
             checkBox1.Checked = false;
         }
@@ -310,7 +314,15 @@ namespace Fitness.gui
         private void btnSubmitBook_Click(object sender, EventArgs e)
         {
             Booked booked = new Booked();
-           
+            
+            booked.course = Convert.ToInt32(cbBookCourse.SelectedValue);
+            booked.customer = Convert.ToInt32(cbbBookCus.SelectedValue);
+            booked.paid = checkBox1.Checked;
+            booked.staff = curent.id;
+            booked.startDay = datePicker.Value;
+
+            bkDAO.create(booked);
+            GetSource.getTableSource(BookedDAO.SPECIAL, dgvBooked);
 
         }
 
@@ -323,32 +335,102 @@ namespace Fitness.gui
             course.type = Convert.ToInt32(cbbType.SelectedValue);
 
             courseDAO.create(course);
+            cbbType.SelectedIndex = -1;
             GetSource.getTableSource(CourseDAO.READ_ALL, dgvCourse);
-            MessageBox.Show("Created","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            
+
         }
 
         private void cbbType_SelectedValueChanged(object sender, EventArgs e)
         {
-            var id = cbbType.SelectedValue.ToString();
-            int id1 = 0;
-            try
-            {
-                id1  = Convert.ToInt32(id);
-            }
-            catch (Exception ex) { }            
-            GetSource.getTableSourceFromList<Course>(courseDAO.getAllByTypeID(id1),dgvCourse);
+            //if (cbbType.SelectedIndex != -1)
+            //{
+            //    var id = cbbType.SelectedValue.ToString();
+            //    int id1 = 0;
+            //    try
+            //    {
+            //        id1 = Convert.ToInt32(id);
+            //    }
+            //    catch (Exception ex) { }
+            //    GetSource.getTableSourceFromList<Course>(courseDAO.getAllByTypeID(id1), dgvCourse);
+            //}
         }
 
         private void btnResetCourse_Click(object sender, EventArgs e)
         {
-     
+
             txtCourseMont.Text = "";
             txtCourseName.Text = "";
             txtCoursePrice.Text = "";
             cbbType.SelectedIndex = -1;
+            
+            GetSource.getTableSource(CourseDAO.READ_ALL, dgvCourse);
+        }
 
+        private void btnEditCourse_Click(object sender, EventArgs e)
+        {
+            Course a = new Course();
+            a.name = txtCourseName.Text;
+            a.months = Convert.ToDecimal(txtCourseMont.Text);
+            a.price = Convert.ToDecimal(txtCoursePrice.Text);
+            a.type = Convert.ToInt32(cbbType.SelectedValue);
+
+            int id = -1;
+            if (dgvAccount != null && dgvCourse.SelectedRows.Count > 0)
+            {
+                DataGridViewRow i = dgvCourse.SelectedRows[0];
+                id = Int32.Parse(i.Cells[0].Value.ToString());
+                
+            }
+            if (id != -1)
+            {
+                a.id = id;
+                courseDAO.update(a);
+                GetSource.getTableSource(CourseDAO.READ_ALL, dgvCourse);
+                MessageBox.Show("Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void dgvCourse_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (string.Compare(dgvCourse.CurrentCell.OwningColumn.Name, "active") == 0)
+            {
+                bool checkBoxStatus = Convert.ToBoolean(dgvCourse.CurrentCell.EditedFormattedValue);
+
+                if (checkBoxStatus)
+                {
+                    int id = Convert.ToInt32(dgvCourse.CurrentRow.Cells[0].Value);
+                    courseDAO.reactive(id);
+                }
+                else
+                {
+                    int id = Convert.ToInt32(dgvCourse.CurrentRow.Cells[0].Value);
+                    courseDAO.delete(id);
+                }
+            }
+            
+        }
+
+        private void cbbType2_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbbType2.SelectedIndex != -1)
+            {
+                var id = cbbType2.SelectedValue.ToString();
+                int id1 = 0;
+                try
+                {
+                    id1 = Convert.ToInt32(id);
+                }
+                catch (Exception ex) { }
+                
+                BindingSource bindding = new BindingSource();
+                bindding.DataSource = courseDAO.getAllByTypeID(id1,true);
+                cbBookCourse.DataSource = bindding.DataSource;
+                cbBookCourse.DisplayMember = "name";
+                cbBookCourse.ValueMember = "id";
+            
+            }
         }
 
 
