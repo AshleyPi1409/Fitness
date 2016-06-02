@@ -11,7 +11,7 @@ namespace Fitness.utils
     {
         public static SqlConnection getConnection()
         {
-            String data = "BAONGUYEN";
+            String data = "ASHLEY-PC";
             String name = "FitnessManager";
             String user = "sa";
             String pass = "123456";

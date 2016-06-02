@@ -67,5 +67,34 @@ namespace Fitness.utils
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public static void autocomplete(TextBox tb,String statement,String columnName)
+        {
+            SqlConnection con = Connector.getConnection();
+            con.Open();
+            try
+            {
+                
+                tb.AutoCompleteMode = AutoCompleteMode.Suggest;
+                tb.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+                SqlCommand cmd  = new SqlCommand(statement, con);
+                SqlDataReader sdr = null;
+                sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    col.Add(sdr[columnName].ToString());
+                }
+                sdr.Close(); 
+                
+                tb.AutoCompleteCustomSource = col;
+                con.Close();
+            }
+            catch
+            {
+            }
+        }
+
+       
     }
 }
