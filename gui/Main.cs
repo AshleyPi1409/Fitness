@@ -23,6 +23,7 @@ namespace Fitness.gui
         CustomerDAO cusDAO = new CustomerDAO();
         AccountDAO accDAO = new AccountDAO();
         BookedDAO bkDAO = new BookedDAO();
+        BillDAOL billDAO = new BillDAOL();
         Accounts curent;
         public Main(String acc)
         {
@@ -48,6 +49,10 @@ namespace Fitness.gui
             cbbRole.SelectedIndex = -1;
             txtStaff.Text = curent.accountName;
 
+            GetSource.invisibleColumnAccount(dgvAccount);
+            GetSource.invisibleColumnCourse(dgvCourse);
+            GetSource.invisibleColumnId(dgvCustomer); GetSource.invisibleColumnId(dgvBooked);
+            GetSource.invisibleColumnBill(dgvBill);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -314,7 +319,7 @@ namespace Fitness.gui
         private void btnSubmitBook_Click(object sender, EventArgs e)
         {
             Booked booked = new Booked();
-            
+
             booked.course = Convert.ToInt32(cbBookCourse.SelectedValue);
             booked.customer = Convert.ToInt32(cbbBookCus.SelectedValue);
             booked.paid = checkBox1.Checked;
@@ -323,7 +328,7 @@ namespace Fitness.gui
 
             bkDAO.create(booked);
             GetSource.getTableSource(BookedDAO.SPECIAL, dgvBooked);
-
+            GetSource.getTableSource(BillDAOL.READ_ALL, dgvBill);
         }
 
         private void materialFlatButton4_Click(object sender, EventArgs e)
@@ -364,7 +369,7 @@ namespace Fitness.gui
             txtCourseName.Text = "";
             txtCoursePrice.Text = "";
             cbbType.SelectedIndex = -1;
-            
+
             GetSource.getTableSource(CourseDAO.READ_ALL, dgvCourse);
         }
 
@@ -381,7 +386,7 @@ namespace Fitness.gui
             {
                 DataGridViewRow i = dgvCourse.SelectedRows[0];
                 id = Int32.Parse(i.Cells[0].Value.ToString());
-                
+
             }
             if (id != -1)
             {
@@ -409,7 +414,7 @@ namespace Fitness.gui
                     courseDAO.delete(id);
                 }
             }
-            
+
         }
 
         private void cbbType2_SelectedValueChanged(object sender, EventArgs e)
@@ -423,18 +428,19 @@ namespace Fitness.gui
                     id1 = Convert.ToInt32(id);
                 }
                 catch (Exception ex) { }
-                
+
                 BindingSource bindding = new BindingSource();
-                bindding.DataSource = courseDAO.getAllByTypeID(id1,true);
+                bindding.DataSource = courseDAO.getAllByTypeID(id1, true);
                 cbBookCourse.DataSource = bindding.DataSource;
                 cbBookCourse.DisplayMember = "name";
                 cbBookCourse.ValueMember = "id";
-            
+
             }
         }
 
         private void dgvBill_SelectionChanged(object sender, EventArgs e)
         {
+
             DataGridView dgv = sender as DataGridView;
             if (dgv != null && dgv.SelectedRows.Count > 0)
             {
@@ -443,7 +449,7 @@ namespace Fitness.gui
                 txtBillCus.Text = i.Cells[1].Value.ToString();
                 txtBillAddr.Text = i.Cells[2].Value.ToString();
                 txtBllPhone.Text = i.Cells[3].Value.ToString();
-                
+
             }
         }
 
@@ -458,9 +464,84 @@ namespace Fitness.gui
         private void btnSearcj_Click(object sender, EventArgs e)
         {
             //customer name, course name
-            String key = txtSearch.Text;
+            //String key = txtSearch.Text;
+            //List<Object> search = new List<Object>();
+
+            //for (int i = 0; i < dgvBill.Rows.GetRowCount(DataGridViewElementStates.Visible); i++)
+            //{
+            //    DataGridViewRow row = dgvBill.SelectedRows[0];
+            //    if (row.Cells[1].Value.ToString().Contains(key))
+            //    {
+
+            //        search.Add(new
+            //        {
+            //            id = row.Cells[0].Value,
+            //            fullname = row.Cells[1].Value,
+            //            address = row.Cells[2].Value,
+            //            phone = row.Cells[3].Value,
+            //            cusid = row.Cells[4].Value,
+            //            name = row.Cells[5].Value,
+            //            startday = row.Cells[6].Value,
+            //            paid = row.Cells[7].Value
+            //        });
+            //    }
+            //}
+            //GetSource.getTableSourceFromList<Object>(search, dgvBill);
         }
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            String key = txtSearch.Text;
+            if (key.Equals(""))
+            {
+                GetSource.getTableSource(BillDAOL.READ_ALL, dgvBill);
+            }
+            else
+            {
+                List<Object> search = new List<Object>();
 
+                DataGridViewRowCollection rows = dgvBill.Rows;
+                foreach (DataGridViewRow row in rows)
+                {
+                    if (row.Cells[1].Value.ToString().Contains(key))
+                    {
+
+                        search.Add(new
+                        {
+                            id = row.Cells[0].Value,
+                            fullname = row.Cells[1].Value,
+                            address = row.Cells[2].Value,
+                            phone = row.Cells[3].Value,
+                            cusid = row.Cells[4].Value,
+                            name = row.Cells[5].Value,
+                            startday = row.Cells[6].Value,
+                            paid = row.Cells[7].Value
+                        });
+                    }
+                }
+
+                GetSource.getTableSourceFromList<Object>(search, dgvBill);
+            }
+        }
+
+        private void btnPaidBill_Click(object sender, EventArgs e)
+        {
+
+            Bill acc = new Bill();
+            acc.staff = curent.id;
+           
+            if (dgvBill != null && dgvBill.SelectedRows.Count > 0)
+            {
+                DataGridViewRow i = dgvBill.SelectedRows[0];
+                acc.booked = Int32.Parse(i.Cells[0].Value.ToString());
+                acc.date = dateTimePicker1.Value;
+                billDAO.create(acc);
+                bkDAO.paid(acc.booked);
+                GetSource.getTableSource(BillDAOL.READ_ALL, dgvBill);
+                GetSource.getTableSource(BookedDAO.SPECIAL, dgvBooked);
+                MessageBox.Show("Paided", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Can not paid this ", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

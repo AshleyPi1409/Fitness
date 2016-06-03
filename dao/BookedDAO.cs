@@ -19,7 +19,7 @@ namespace Fitness.dao
         public readonly string CREATE = "INSERT INTO Booked (customer, staff, course, startday,paid) VALUES(@cus,@staff,@course,@day,@paid)";
         public readonly string UPDATE = "UPDATE Booked SET course = @course, startday = @day, paid = @paid WHERE ID = @id";
         public readonly string DELETE = "DELETE FROM Booked  WHERE ID = @id ";
-      
+        public readonly string PAID = "UPDATE Booked SET paid = 1 WHERE ID = @id";
        
 
         public List<Booked> getAll()
@@ -115,6 +115,35 @@ namespace Fitness.dao
 
                 int rowCount = cmd.ExecuteNonQuery();
                 Console.WriteLine("Row Count affected = " + rowCount);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("khong the ket noi");
+                Console.WriteLine(e.StackTrace);
+            }
+            finally
+            {
+                con.Close();
+                con.Dispose();
+                con = null;
+
+            }
+        }
+        public void paid(int id)
+        {
+            SqlConnection con = null;
+            con = Connector.getConnection();
+            con.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = PAID;
+
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+                int rowCount = cmd.ExecuteNonQuery();
+                Console.WriteLine("PAIDED = " + rowCount);
             }
             catch (Exception e)
             {

@@ -82,7 +82,7 @@
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.Submit = new MaterialSkin.Controls.MaterialFlatButton();
-            this.Reset = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnPaidBill = new MaterialSkin.Controls.MaterialFlatButton();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvBill = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
@@ -963,7 +963,7 @@
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel19.Controls.Add(this.Submit, 0, 0);
-            this.tableLayoutPanel19.Controls.Add(this.Reset, 0, 0);
+            this.tableLayoutPanel19.Controls.Add(this.btnPaidBill, 0, 0);
             this.tableLayoutPanel19.Location = new System.Drawing.Point(8, 378);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 1;
@@ -992,25 +992,26 @@
             this.Submit.UseVisualStyleBackColor = false;
             this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
-            // Reset
+            // btnPaidBill
             // 
-            this.Reset.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnPaidBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Reset.AutoSize = true;
-            this.Reset.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Reset.BackColor = System.Drawing.Color.Transparent;
-            this.Reset.Depth = 0;
-            this.Reset.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Reset.Location = new System.Drawing.Point(4, 6);
-            this.Reset.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Reset.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Reset.Name = "Reset";
-            this.Reset.Primary = false;
-            this.Reset.Size = new System.Drawing.Size(167, 24);
-            this.Reset.TabIndex = 1;
-            this.Reset.Text = "Paid";
-            this.Reset.UseVisualStyleBackColor = false;
+            this.btnPaidBill.AutoSize = true;
+            this.btnPaidBill.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnPaidBill.BackColor = System.Drawing.Color.Transparent;
+            this.btnPaidBill.Depth = 0;
+            this.btnPaidBill.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPaidBill.Location = new System.Drawing.Point(4, 6);
+            this.btnPaidBill.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnPaidBill.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnPaidBill.Name = "btnPaidBill";
+            this.btnPaidBill.Primary = false;
+            this.btnPaidBill.Size = new System.Drawing.Size(167, 24);
+            this.btnPaidBill.TabIndex = 1;
+            this.btnPaidBill.Text = "Paid";
+            this.btnPaidBill.UseVisualStyleBackColor = false;
+            this.btnPaidBill.Click += new System.EventHandler(this.btnPaidBill_Click);
             // 
             // tableLayoutPanel18
             // 
@@ -1079,6 +1080,7 @@
             this.txtSearch.Size = new System.Drawing.Size(287, 23);
             this.txtSearch.TabIndex = 14;
             this.txtSearch.UseSystemPasswordChar = false;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // tableLayoutPanel16
             // 
@@ -1337,6 +1339,7 @@
             // txtStaff
             // 
             this.txtStaff.Depth = 0;
+            this.txtStaff.Enabled = false;
             this.txtStaff.Hint = "";
             this.txtStaff.Location = new System.Drawing.Point(120, 40);
             this.txtStaff.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1609,7 +1612,7 @@
         private MaterialSkin.Controls.MaterialFlatButton btnCusEdit;
         private MaterialSkin.Controls.MaterialFlatButton btnCusCreate;
         private MaterialSkin.Controls.MaterialFlatButton Submit;
-        private MaterialSkin.Controls.MaterialFlatButton Reset;
+        private MaterialSkin.Controls.MaterialFlatButton btnPaidBill;
         private MaterialSkin.Controls.MaterialFlatButton btnSubmitBook;
         private MaterialSkin.Controls.MaterialFlatButton btnResetBook;
         private MaterialSkin.Controls.MaterialLabel btnSearcj;

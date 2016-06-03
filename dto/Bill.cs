@@ -12,7 +12,10 @@ namespace Fitness.dto
         public int staff { get; set; }
         public int booked { get; set; }
         public DateTime date { get; set; }
+        public Bill()
+        {
 
+        }
         public Bill( int id ,int staff , int booked , DateTime date)
         {
             this.id = id;

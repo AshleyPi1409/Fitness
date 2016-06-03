@@ -126,37 +126,6 @@ namespace Fitness.dao
 
             }
         }
-        //public void update(Bill acc)
-        //{
-        //    SqlConnection con = Connector.getConnection();
-        //    con.Open();
-        //    try
-        //    {
-        //        SqlCommand cmd = new SqlCommand();
-        //        cmd.Connection = con;
-        //        cmd.CommandText = UPDATE;
-
-        //        cmd.Parameters.Add("@course", SqlDbType.Int).Value = acc.course;
-        //        cmd.Parameters.Add("@day", SqlDbType.DateTime).Value = acc.startDay;
-        //        cmd.Parameters.Add("@paid", SqlDbType.Bit).Value = acc.paid;
-
-        //        cmd.Parameters.Add("@id", SqlDbType.Int).Value = acc.id;
-
-        //        int rowCount = cmd.ExecuteNonQuery();
-        //        Console.WriteLine("Row Count affected = " + rowCount);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine("khong the ket noi");
-        //        Console.WriteLine(e.StackTrace);
-        //    }
-        //    finally
-        //    {
-        //        con.Close();
-        //        con.Dispose();
-        //        con = null;
-        //    }
-
-        //}
+       
     }
 }

@@ -18,6 +18,7 @@ namespace Fitness.utils
             SqlDataAdapter adapter;
             DataTable ds = new DataTable();
 
+            
 
             connection = Connector.getConnection();
             try
@@ -27,7 +28,7 @@ namespace Fitness.utils
                 adapter.Fill(ds);
                 dgv.DataSource = ds;
                 dgv.AllowUserToAddRows = false;
-              
+                dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 connection.Close();
             }
             catch (Exception ex)
@@ -74,7 +75,6 @@ namespace Fitness.utils
             con.Open();
             try
             {
-                
                 tb.AutoCompleteMode = AutoCompleteMode.Suggest;
                 tb.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 AutoCompleteStringCollection col = new AutoCompleteStringCollection();
@@ -95,6 +95,28 @@ namespace Fitness.utils
             }
         }
 
-       
+        public static void invisibleColumnAccount(DataGridView dgv)
+        {
+            dgv.Columns["id"].Visible = false;
+            dgv.Columns["password"].Visible = false;
+        }
+
+        public static void invisibleColumnCourse(DataGridView dgv)
+        {
+            dgv.Columns["id"].Visible = false;
+            dgv.Columns["idtype"].Visible = false;
+        }
+        public static void invisibleColumnId(DataGridView dgv)
+        {
+            dgv.Columns["id"].Visible = false;
+            
+        }
+        public static void invisibleColumnBill(DataGridView dgv)
+        {
+            dgv.Columns["id"].Visible = false;
+            dgv.Columns["id1"].Visible = false;
+            dgv.Columns["address"].Visible = false;
+            dgv.Columns["phone"].Visible = false;
+        }
     }
 }
