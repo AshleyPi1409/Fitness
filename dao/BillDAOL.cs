@@ -13,7 +13,7 @@ namespace Fitness.dao
 {
     class BillDAOL
     {
-        public static readonly string READ_ALL = "SELECT * FROM Bill";
+        public static readonly string READ_ALL = "select a.id, b.fullname, b.address, b.phone, b.id, c.name, a.startday,a.paid from Booked a , Customer b, Course c where a.customer = b.ID and a.course = c.ID and a.paid = 0";
         public readonly string READ_BY_ID = "SELECT * FROM Bill WHERE ID = @id";
         public readonly string CREATE = "INSERT INTO Bill (staff, booked, date) VALUES(@staff,@booked,@day)";
         

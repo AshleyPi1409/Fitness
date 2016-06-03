@@ -37,7 +37,7 @@ namespace Fitness.gui
 
             GetSource.getTableSource(AccountDAO.READ_ALL, dgvAccount);
             GetSource.getTableSource(CustomerDAO.READ_ALL, dgvCustomer);
-            //GetSource.getTableSource(BillDAOL.READ_ALL, dgvBill);
+            GetSource.getTableSource(BillDAOL.READ_ALL, dgvBill);
             GetSource.getTableSource(BookedDAO.SPECIAL, dgvBooked);
             GetSource.getTableSource(CourseDAO.READ_ALL, dgvCourse);
 
@@ -431,6 +431,34 @@ namespace Fitness.gui
                 cbBookCourse.ValueMember = "id";
             
             }
+        }
+
+        private void dgvBill_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            if (dgv != null && dgv.SelectedRows.Count > 0)
+            {
+                DataGridViewRow i = dgvBill.SelectedRows[0];
+
+                txtBillCus.Text = i.Cells[1].Value.ToString();
+                txtBillAddr.Text = i.Cells[2].Value.ToString();
+                txtBllPhone.Text = i.Cells[3].Value.ToString();
+                
+            }
+        }
+
+        private void Submit_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            txtBillAddr.Text = "";
+            txtBillCus.Text = "";
+            txtBllPhone.Text = "";
+        }
+
+        private void btnSearcj_Click(object sender, EventArgs e)
+        {
+            //customer name, course name
+            String key = txtSearch.Text;
         }
 
 

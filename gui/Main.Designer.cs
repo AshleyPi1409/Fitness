@@ -86,16 +86,16 @@
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvBill = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSingleLineTextField13 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnSearcj = new MaterialSkin.Controls.MaterialLabel();
+            this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSingleLineTextField10 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField11 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField12 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtBillCus = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtBillAddr = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtBllPhone = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -988,8 +988,9 @@
             this.Submit.Primary = false;
             this.Submit.Size = new System.Drawing.Size(167, 24);
             this.Submit.TabIndex = 2;
-            this.Submit.Text = "Create";
+            this.Submit.Text = "Reset";
             this.Submit.UseVisualStyleBackColor = false;
+            this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
             // Reset
             // 
@@ -1032,6 +1033,7 @@
             this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBill.Size = new System.Drawing.Size(424, 381);
             this.dgvBill.TabIndex = 1;
+            this.dgvBill.SelectionChanged += new System.EventHandler(this.dgvBill_SelectionChanged);
             // 
             // tableLayoutPanel17
             // 
@@ -1039,8 +1041,8 @@
             this.tableLayoutPanel17.ColumnCount = 2;
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.09179F));
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.90821F));
-            this.tableLayoutPanel17.Controls.Add(this.lbl, 1, 0);
-            this.tableLayoutPanel17.Controls.Add(this.materialSingleLineTextField13, 0, 0);
+            this.tableLayoutPanel17.Controls.Add(this.btnSearcj, 1, 0);
+            this.tableLayoutPanel17.Controls.Add(this.txtSearch, 0, 0);
             this.tableLayoutPanel17.Location = new System.Drawing.Point(6, 121);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 1;
@@ -1048,34 +1050,35 @@
             this.tableLayoutPanel17.Size = new System.Drawing.Size(353, 29);
             this.tableLayoutPanel17.TabIndex = 7;
             // 
-            // lbl
+            // btnSearcj
             // 
-            this.lbl.AutoSize = true;
-            this.lbl.Depth = 0;
-            this.lbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl.Image = global::Fitness.Properties.Resources.search1;
-            this.lbl.Location = new System.Drawing.Point(296, 0);
-            this.lbl.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(54, 29);
-            this.lbl.TabIndex = 10;
+            this.btnSearcj.AutoSize = true;
+            this.btnSearcj.Depth = 0;
+            this.btnSearcj.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSearcj.Font = new System.Drawing.Font("Roboto", 11F);
+            this.btnSearcj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSearcj.Image = global::Fitness.Properties.Resources.search1;
+            this.btnSearcj.Location = new System.Drawing.Point(296, 0);
+            this.btnSearcj.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSearcj.Name = "btnSearcj";
+            this.btnSearcj.Size = new System.Drawing.Size(54, 29);
+            this.btnSearcj.TabIndex = 10;
+            this.btnSearcj.Click += new System.EventHandler(this.btnSearcj_Click);
             // 
-            // materialSingleLineTextField13
+            // txtSearch
             // 
-            this.materialSingleLineTextField13.Depth = 0;
-            this.materialSingleLineTextField13.Hint = "";
-            this.materialSingleLineTextField13.Location = new System.Drawing.Point(3, 3);
-            this.materialSingleLineTextField13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField13.Name = "materialSingleLineTextField13";
-            this.materialSingleLineTextField13.PasswordChar = '\0';
-            this.materialSingleLineTextField13.SelectedText = "";
-            this.materialSingleLineTextField13.SelectionLength = 0;
-            this.materialSingleLineTextField13.SelectionStart = 0;
-            this.materialSingleLineTextField13.Size = new System.Drawing.Size(287, 23);
-            this.materialSingleLineTextField13.TabIndex = 14;
-            this.materialSingleLineTextField13.UseSystemPasswordChar = false;
+            this.txtSearch.Depth = 0;
+            this.txtSearch.Hint = "";
+            this.txtSearch.Location = new System.Drawing.Point(3, 3);
+            this.txtSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.SelectionLength = 0;
+            this.txtSearch.SelectionStart = 0;
+            this.txtSearch.Size = new System.Drawing.Size(287, 23);
+            this.txtSearch.TabIndex = 14;
+            this.txtSearch.UseSystemPasswordChar = false;
             // 
             // tableLayoutPanel16
             // 
@@ -1087,9 +1090,9 @@
             this.tableLayoutPanel16.Controls.Add(this.materialLabel13, 0, 2);
             this.tableLayoutPanel16.Controls.Add(this.materialLabel12, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.materialLabel4, 0, 1);
-            this.tableLayoutPanel16.Controls.Add(this.materialSingleLineTextField10, 1, 0);
-            this.tableLayoutPanel16.Controls.Add(this.materialSingleLineTextField11, 1, 1);
-            this.tableLayoutPanel16.Controls.Add(this.materialSingleLineTextField12, 1, 2);
+            this.tableLayoutPanel16.Controls.Add(this.txtBillCus, 1, 0);
+            this.tableLayoutPanel16.Controls.Add(this.txtBillAddr, 1, 1);
+            this.tableLayoutPanel16.Controls.Add(this.txtBllPhone, 1, 2);
             this.tableLayoutPanel16.Controls.Add(this.dateTimePicker1, 1, 3);
             this.tableLayoutPanel16.Location = new System.Drawing.Point(7, 164);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
@@ -1153,50 +1156,50 @@
             this.materialLabel4.TabIndex = 15;
             this.materialLabel4.Text = "Address:";
             // 
-            // materialSingleLineTextField10
+            // txtBillCus
             // 
-            this.materialSingleLineTextField10.Depth = 0;
-            this.materialSingleLineTextField10.Hint = "";
-            this.materialSingleLineTextField10.Location = new System.Drawing.Point(103, 3);
-            this.materialSingleLineTextField10.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField10.Name = "materialSingleLineTextField10";
-            this.materialSingleLineTextField10.PasswordChar = '\0';
-            this.materialSingleLineTextField10.SelectedText = "";
-            this.materialSingleLineTextField10.SelectionLength = 0;
-            this.materialSingleLineTextField10.SelectionStart = 0;
-            this.materialSingleLineTextField10.Size = new System.Drawing.Size(245, 23);
-            this.materialSingleLineTextField10.TabIndex = 17;
-            this.materialSingleLineTextField10.UseSystemPasswordChar = false;
+            this.txtBillCus.Depth = 0;
+            this.txtBillCus.Hint = "";
+            this.txtBillCus.Location = new System.Drawing.Point(103, 3);
+            this.txtBillCus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBillCus.Name = "txtBillCus";
+            this.txtBillCus.PasswordChar = '\0';
+            this.txtBillCus.SelectedText = "";
+            this.txtBillCus.SelectionLength = 0;
+            this.txtBillCus.SelectionStart = 0;
+            this.txtBillCus.Size = new System.Drawing.Size(245, 23);
+            this.txtBillCus.TabIndex = 17;
+            this.txtBillCus.UseSystemPasswordChar = false;
             // 
-            // materialSingleLineTextField11
+            // txtBillAddr
             // 
-            this.materialSingleLineTextField11.Depth = 0;
-            this.materialSingleLineTextField11.Hint = "";
-            this.materialSingleLineTextField11.Location = new System.Drawing.Point(103, 41);
-            this.materialSingleLineTextField11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField11.Name = "materialSingleLineTextField11";
-            this.materialSingleLineTextField11.PasswordChar = '\0';
-            this.materialSingleLineTextField11.SelectedText = "";
-            this.materialSingleLineTextField11.SelectionLength = 0;
-            this.materialSingleLineTextField11.SelectionStart = 0;
-            this.materialSingleLineTextField11.Size = new System.Drawing.Size(245, 23);
-            this.materialSingleLineTextField11.TabIndex = 18;
-            this.materialSingleLineTextField11.UseSystemPasswordChar = false;
+            this.txtBillAddr.Depth = 0;
+            this.txtBillAddr.Hint = "";
+            this.txtBillAddr.Location = new System.Drawing.Point(103, 41);
+            this.txtBillAddr.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBillAddr.Name = "txtBillAddr";
+            this.txtBillAddr.PasswordChar = '\0';
+            this.txtBillAddr.SelectedText = "";
+            this.txtBillAddr.SelectionLength = 0;
+            this.txtBillAddr.SelectionStart = 0;
+            this.txtBillAddr.Size = new System.Drawing.Size(245, 23);
+            this.txtBillAddr.TabIndex = 18;
+            this.txtBillAddr.UseSystemPasswordChar = false;
             // 
-            // materialSingleLineTextField12
+            // txtBllPhone
             // 
-            this.materialSingleLineTextField12.Depth = 0;
-            this.materialSingleLineTextField12.Hint = "";
-            this.materialSingleLineTextField12.Location = new System.Drawing.Point(103, 79);
-            this.materialSingleLineTextField12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField12.Name = "materialSingleLineTextField12";
-            this.materialSingleLineTextField12.PasswordChar = '\0';
-            this.materialSingleLineTextField12.SelectedText = "";
-            this.materialSingleLineTextField12.SelectionLength = 0;
-            this.materialSingleLineTextField12.SelectionStart = 0;
-            this.materialSingleLineTextField12.Size = new System.Drawing.Size(245, 23);
-            this.materialSingleLineTextField12.TabIndex = 19;
-            this.materialSingleLineTextField12.UseSystemPasswordChar = false;
+            this.txtBllPhone.Depth = 0;
+            this.txtBllPhone.Hint = "";
+            this.txtBllPhone.Location = new System.Drawing.Point(103, 79);
+            this.txtBllPhone.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBllPhone.Name = "txtBllPhone";
+            this.txtBllPhone.PasswordChar = '\0';
+            this.txtBllPhone.SelectedText = "";
+            this.txtBllPhone.SelectionLength = 0;
+            this.txtBllPhone.SelectionStart = 0;
+            this.txtBllPhone.Size = new System.Drawing.Size(245, 23);
+            this.txtBllPhone.TabIndex = 19;
+            this.txtBllPhone.UseSystemPasswordChar = false;
             // 
             // dateTimePicker1
             // 
@@ -1609,7 +1612,7 @@
         private MaterialSkin.Controls.MaterialFlatButton Reset;
         private MaterialSkin.Controls.MaterialFlatButton btnSubmitBook;
         private MaterialSkin.Controls.MaterialFlatButton btnResetBook;
-        private MaterialSkin.Controls.MaterialLabel lbl;
+        private MaterialSkin.Controls.MaterialLabel btnSearcj;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.ComboBox cbbType2;
@@ -1624,10 +1627,10 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCusName;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCusAddr;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCusPhone;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField13;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField10;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField11;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField12;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtBillCus;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtBillAddr;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtBllPhone;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtStaff;
         private System.Windows.Forms.ComboBox cbbRole;
         private System.Windows.Forms.DateTimePicker datePicker;
