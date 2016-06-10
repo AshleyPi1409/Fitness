@@ -61,7 +61,6 @@ namespace Fitness
 
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
-            
             if (Control.IsKeyLocked(Keys.CapsLock))
             {
                 MessageBox.Show("The Caps Lock key is ON.");

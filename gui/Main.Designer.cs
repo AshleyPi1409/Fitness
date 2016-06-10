@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabs = new MaterialSkin.Controls.MaterialTabControl();
+            this.tab8 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelete = new MaterialSkin.Controls.MaterialFlatButton();
@@ -100,8 +100,8 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSubmitBook = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnResetBook = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnSubmitBook = new MaterialSkin.Controls.MaterialFlatButton();
             this.tblLayPnl = new System.Windows.Forms.TableLayoutPanel();
             this.cbBookCourse = new System.Windows.Forms.ComboBox();
             this.txtStaff = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -117,8 +117,16 @@
             this.cbbBookCus = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvBooked = new System.Windows.Forms.DataGridView();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.dgvLog = new System.Windows.Forms.DataGridView();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.dgvPer = new System.Windows.Forms.DataGridView();
+            this.materialLabel21 = new MaterialSkin.Controls.MaterialLabel();
+            this.cbbPer = new System.Windows.Forms.ComboBox();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.tabs.SuspendLayout();
+            this.tab8.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -146,22 +154,30 @@
             this.tblLayPnl.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooked)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPer)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabs
+            // tab8
             // 
-            this.tabs.Controls.Add(this.tabPage1);
-            this.tabs.Controls.Add(this.tabPage2);
-            this.tabs.Controls.Add(this.tabPage3);
-            this.tabs.Controls.Add(this.tabPage4);
-            this.tabs.Controls.Add(this.tabPage5);
-            this.tabs.Depth = 0;
-            this.tabs.Location = new System.Drawing.Point(0, 65);
-            this.tabs.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tabs.Name = "tabs";
-            this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(814, 475);
-            this.tabs.TabIndex = 0;
+            this.tab8.Controls.Add(this.tabPage1);
+            this.tab8.Controls.Add(this.tabPage2);
+            this.tab8.Controls.Add(this.tabPage3);
+            this.tab8.Controls.Add(this.tabPage4);
+            this.tab8.Controls.Add(this.tabPage5);
+            this.tab8.Controls.Add(this.tabPage6);
+            this.tab8.Controls.Add(this.tabPage7);
+            this.tab8.Controls.Add(this.tabPage8);
+            this.tab8.Depth = 0;
+            this.tab8.Location = new System.Drawing.Point(0, 65);
+            this.tab8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tab8.Name = "tab8";
+            this.tab8.SelectedIndex = 0;
+            this.tab8.Size = new System.Drawing.Size(814, 475);
+            this.tab8.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -1245,35 +1261,14 @@
             this.tableLayoutPanel15.ColumnCount = 2;
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.Controls.Add(this.btnSubmitBook, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.btnResetBook, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.btnSubmitBook, 1, 0);
             this.tableLayoutPanel15.Location = new System.Drawing.Point(11, 247);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.Size = new System.Drawing.Size(363, 43);
             this.tableLayoutPanel15.TabIndex = 2;
-            // 
-            // btnSubmitBook
-            // 
-            this.btnSubmitBook.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubmitBook.AutoSize = true;
-            this.btnSubmitBook.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSubmitBook.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubmitBook.Depth = 0;
-            this.btnSubmitBook.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSubmitBook.Location = new System.Drawing.Point(185, 6);
-            this.btnSubmitBook.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnSubmitBook.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSubmitBook.Name = "btnSubmitBook";
-            this.btnSubmitBook.Primary = false;
-            this.btnSubmitBook.Size = new System.Drawing.Size(174, 31);
-            this.btnSubmitBook.TabIndex = 2;
-            this.btnSubmitBook.Text = "Submit";
-            this.btnSubmitBook.UseVisualStyleBackColor = false;
-            this.btnSubmitBook.Click += new System.EventHandler(this.btnSubmitBook_Click);
             // 
             // btnResetBook
             // 
@@ -1295,6 +1290,27 @@
             this.btnResetBook.Text = "Reset";
             this.btnResetBook.UseVisualStyleBackColor = false;
             this.btnResetBook.Click += new System.EventHandler(this.btnResetBook_Click);
+            // 
+            // btnSubmitBook
+            // 
+            this.btnSubmitBook.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSubmitBook.AutoSize = true;
+            this.btnSubmitBook.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSubmitBook.BackColor = System.Drawing.Color.Transparent;
+            this.btnSubmitBook.Depth = 0;
+            this.btnSubmitBook.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSubmitBook.Location = new System.Drawing.Point(185, 6);
+            this.btnSubmitBook.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSubmitBook.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSubmitBook.Name = "btnSubmitBook";
+            this.btnSubmitBook.Primary = false;
+            this.btnSubmitBook.Size = new System.Drawing.Size(174, 31);
+            this.btnSubmitBook.TabIndex = 2;
+            this.btnSubmitBook.Text = "Submit";
+            this.btnSubmitBook.UseVisualStyleBackColor = false;
+            this.btnSubmitBook.Click += new System.EventHandler(this.btnSubmitBook_Click);
             // 
             // tblLayPnl
             // 
@@ -1485,9 +1501,101 @@
             this.dgvBooked.Size = new System.Drawing.Size(412, 431);
             this.dgvBooked.TabIndex = 1;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.materialFlatButton1);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(806, 449);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Reports";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.Location = new System.Drawing.Point(56, 21);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = false;
+            this.materialFlatButton1.Size = new System.Drawing.Size(50, 36);
+            this.materialFlatButton1.TabIndex = 2;
+            this.materialFlatButton1.Text = "click";
+            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.dgvLog);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(806, 449);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "LOG";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // dgvLog
+            // 
+            this.dgvLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLog.Location = new System.Drawing.Point(36, 19);
+            this.dgvLog.Name = "dgvLog";
+            this.dgvLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLog.Size = new System.Drawing.Size(735, 403);
+            this.dgvLog.TabIndex = 1;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.dgvPer);
+            this.tabPage8.Controls.Add(this.materialLabel21);
+            this.tabPage8.Controls.Add(this.cbbPer);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(806, 449);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Permission";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // dgvPer
+            // 
+            this.dgvPer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPer.Location = new System.Drawing.Point(336, 6);
+            this.dgvPer.Name = "dgvPer";
+            this.dgvPer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPer.Size = new System.Drawing.Size(463, 437);
+            this.dgvPer.TabIndex = 2;
+            this.dgvPer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPer_CellContentClick);
+            // 
+            // materialLabel21
+            // 
+            this.materialLabel21.AutoSize = true;
+            this.materialLabel21.Depth = 0;
+            this.materialLabel21.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel21.Location = new System.Drawing.Point(30, 18);
+            this.materialLabel21.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel21.Name = "materialLabel21";
+            this.materialLabel21.Size = new System.Drawing.Size(72, 19);
+            this.materialLabel21.TabIndex = 1;
+            this.materialLabel21.Text = "Role List:";
+            // 
+            // cbbPer
+            // 
+            this.cbbPer.FormattingEnabled = true;
+            this.cbbPer.Location = new System.Drawing.Point(34, 51);
+            this.cbbPer.Name = "cbbPer";
+            this.cbbPer.Size = new System.Drawing.Size(198, 21);
+            this.cbbPer.TabIndex = 0;
+            this.cbbPer.SelectedValueChanged += new System.EventHandler(this.cbbPer_SelectedValueChanged);
+            // 
             // materialTabSelector1
             // 
-            this.materialTabSelector1.BaseTabControl = this.tabs;
+            this.materialTabSelector1.BaseTabControl = this.tab8;
             this.materialTabSelector1.Depth = 0;
             this.materialTabSelector1.ForeColor = System.Drawing.Color.LightPink;
             this.materialTabSelector1.Location = new System.Drawing.Point(0, 26);
@@ -1502,13 +1610,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 542);
-            this.Controls.Add(this.tabs);
+            this.Controls.Add(this.tab8);
             this.Controls.Add(this.materialTabSelector1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Sizable = false;
-            this.tabs.ResumeLayout(false);
+            this.tab8.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
@@ -1548,13 +1656,20 @@
             this.tblLayPnl.PerformLayout();
             this.tableLayoutPanel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooked)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPer)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTabControl tabs;
+        private MaterialSkin.Controls.MaterialTabControl tab8;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
@@ -1644,5 +1759,13 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox cbbBookCus;
         private System.Windows.Forms.ComboBox cbBookCourse;
+        private System.Windows.Forms.TabPage tabPage6;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.DataGridView dgvLog;
+        private System.Windows.Forms.TabPage tabPage8;
+        private MaterialSkin.Controls.MaterialLabel materialLabel21;
+        private System.Windows.Forms.ComboBox cbbPer;
+        private System.Windows.Forms.DataGridView dgvPer;
     }
 }

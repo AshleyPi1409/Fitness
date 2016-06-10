@@ -63,7 +63,14 @@ namespace Fitness.dao
             }
             return list;
         }
-
+        public Booked findByID(int id)
+        {
+            foreach (Booked b in getAll())
+            {
+                if (b.id == id) return b;
+            }
+            return null;
+        } 
         public void create(Booked acc)
         {
             SqlConnection con = null;

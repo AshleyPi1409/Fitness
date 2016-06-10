@@ -48,6 +48,7 @@ namespace Fitness.utils
             };
 
             dgv.DataSource = Source;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         public static void getComboxSource(String statement,ComboBox cbb,String text)
@@ -100,7 +101,11 @@ namespace Fitness.utils
             dgv.Columns["id"].Visible = false;
             dgv.Columns["password"].Visible = false;
         }
-
+        public static void invisibleColumnPer(DataGridView dgv)
+        {
+            dgv.Columns["id"].Visible = false;
+            dgv.Columns["RoleID"].Visible = false;
+        }
         public static void invisibleColumnCourse(DataGridView dgv)
         {
             dgv.Columns["id"].Visible = false;

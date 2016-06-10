@@ -13,6 +13,10 @@ namespace Fitness.dto
         public DateTime date { get; set; }
         public string description { get; set; }
 
+        public Diary()
+        {
+
+        }
         public Diary(int id,int account, DateTime date, string description)
         {
             this.id = id;

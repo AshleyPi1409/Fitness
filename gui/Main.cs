@@ -1,5 +1,6 @@
 ﻿using Fitness.dao;
 using Fitness.dto;
+using Fitness.Report;
 using Fitness.utils;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -19,11 +20,13 @@ namespace Fitness.gui
     public partial class Main : MaterialForm
     {
         RoleDAO roleDAO = new RoleDAO();
+        RoleFuncDAO rfDAO = new RoleFuncDAO();
         CourseDAO courseDAO = new CourseDAO();
         CustomerDAO cusDAO = new CustomerDAO();
         AccountDAO accDAO = new AccountDAO();
         BookedDAO bkDAO = new BookedDAO();
         BillDAOL billDAO = new BillDAOL();
+        DiaryDAO diaryDAO = new DiaryDAO();
         Accounts curent;
         public Main(String acc)
         {
@@ -41,8 +44,10 @@ namespace Fitness.gui
             GetSource.getTableSource(BillDAOL.READ_ALL, dgvBill);
             GetSource.getTableSource(BookedDAO.SPECIAL, dgvBooked);
             GetSource.getTableSource(CourseDAO.READ_ALL, dgvCourse);
+            GetSource.getTableSource(DiaryDAO.READ_ALL, dgvLog);
 
             GetSource.getComboxSource(RoleDAO.READ_ALL, cbbRole, "roleName");
+            GetSource.getComboxSource(RoleDAO.READ_ALL, cbbPer, "roleName");
             GetSource.getComboxSource(TypeDAO.READ_ALL, cbbType, "Name");
             GetSource.getComboxSource(TypeDAO.READ_ALL, cbbType2, "Name");
             GetSource.getComboxSource(CustomerDAO.READ_ALL, cbbBookCus, "fullName");
@@ -53,6 +58,7 @@ namespace Fitness.gui
             GetSource.invisibleColumnCourse(dgvCourse);
             GetSource.invisibleColumnId(dgvCustomer); GetSource.invisibleColumnId(dgvBooked);
             GetSource.invisibleColumnBill(dgvBill);
+            GetSource.invisibleColumnPer(dgvPer);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -154,6 +160,13 @@ namespace Fitness.gui
                 accDAO.create(a);
                 GetSource.getTableSource(AccountDAO.READ_ALL, dgvAccount);
                 MessageBox.Show("Created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Diary dia = new Diary();
+                dia.account = curent.id;
+                dia.date = DateTime.Today;
+                dia.description = "Create new account";
+                diaryDAO.create(dia);
+                GetSource.getTableSource(DiaryDAO.READ_ALL, dgvLog);
+
             }
             else MessageBox.Show("Can not create this account ", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -200,6 +213,12 @@ namespace Fitness.gui
                 accDAO.update(acc);
                 GetSource.getTableSource(AccountDAO.READ_ALL, dgvAccount);
                 MessageBox.Show("Edited", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Diary dia = new Diary();
+                dia.account = curent.id;
+                dia.date = DateTime.Today;
+                dia.description = "Edit account " + acc.accountName;
+                diaryDAO.create(dia);
+                GetSource.getTableSource(DiaryDAO.READ_ALL, dgvLog);
             }
             else MessageBox.Show("Can not edit this account ", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -230,6 +249,12 @@ namespace Fitness.gui
                     GetSource.getTableSource(AccountDAO.READ_ALL, dgvAccount);
                 }
                 MessageBox.Show("Deleted", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Diary dia = new Diary();
+                dia.account = curent.id;
+                dia.date = DateTime.Today;
+                dia.description = "Delete account " + acc.accountName;
+                diaryDAO.create(dia);
+                GetSource.getTableSource(DiaryDAO.READ_ALL, dgvLog);
             }
             else MessageBox.Show("Can not deleted this account ", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -244,11 +269,23 @@ namespace Fitness.gui
                 {
                     int id = Convert.ToInt32(dgvAccount.CurrentRow.Cells[0].Value);
                     accDAO.reactive(id);
+                    Diary dia = new Diary();
+                    dia.account = curent.id;
+                    dia.date = DateTime.Today;
+                    dia.description = "Reactive account " + id.ToString();
+                    diaryDAO.create(dia);
+                    GetSource.getTableSource(DiaryDAO.READ_ALL, dgvLog);
                 }
                 else
                 {
                     int id = Convert.ToInt32(dgvAccount.CurrentRow.Cells[0].Value);
                     accDAO.delete(id);
+                    Diary dia = new Diary();
+                    dia.account = curent.id;
+                    dia.date = DateTime.Today;
+                    dia.description = "Deactive account " + id.ToString();
+                    diaryDAO.create(dia);
+                    GetSource.getTableSource(DiaryDAO.READ_ALL, dgvLog);
                 }
             }
         }
@@ -263,6 +300,12 @@ namespace Fitness.gui
             GetSource.getTableSource(CustomerDAO.READ_ALL, dgvCustomer);
             GetSource.getComboxSource(CustomerDAO.READ_ALL, cbbBookCus, "fullName");
             MessageBox.Show("Created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Diary dia = new Diary();
+            dia.account = curent.id;
+            dia.date = DateTime.Today;
+            dia.description = "Create customer " + a.name;
+            diaryDAO.create(dia);
+            GetSource.getTableSource(DiaryDAO.READ_ALL, dgvLog);
         }
 
         private void btnCusEdit_Click(object sender, EventArgs e)
@@ -283,6 +326,12 @@ namespace Fitness.gui
                 cusDAO.update(a);
                 GetSource.getTableSource(CustomerDAO.READ_ALL, dgvCustomer);
                 MessageBox.Show("Created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Diary dia = new Diary();
+                dia.account = curent.id;
+                dia.date = DateTime.Today;
+                dia.description = "Edit customer " + a.name;
+                diaryDAO.create(dia);
+                GetSource.getTableSource(DiaryDAO.READ_ALL, dgvLog);
             }
         }
 
@@ -304,6 +353,12 @@ namespace Fitness.gui
                 cusDAO.delete(a);
                 GetSource.getTableSource(CustomerDAO.READ_ALL, dgvCustomer);
                 MessageBox.Show("Deleted", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Diary dia = new Diary();
+                dia.account = curent.id;
+                dia.date = DateTime.Today;
+                dia.description = "Delete customer " + a.name;
+                diaryDAO.create(dia);
+                GetSource.getTableSource(DiaryDAO.READ_ALL, dgvLog);
             }
         }
 
@@ -329,6 +384,14 @@ namespace Fitness.gui
             bkDAO.create(booked);
             GetSource.getTableSource(BookedDAO.SPECIAL, dgvBooked);
             GetSource.getTableSource(BillDAOL.READ_ALL, dgvBill);
+            MessageBox.Show("Booked", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Diary dia = new Diary();
+            dia.account = curent.id;
+            dia.date = DateTime.Today;
+            dia.description = "Booked new course " + booked.course;
+            diaryDAO.create(dia);
+            GetSource.getTableSource(DiaryDAO.READ_ALL, dgvLog);
+
         }
 
         private void materialFlatButton4_Click(object sender, EventArgs e)
@@ -343,6 +406,13 @@ namespace Fitness.gui
             cbbType.SelectedIndex = -1;
             GetSource.getTableSource(CourseDAO.READ_ALL, dgvCourse);
             MessageBox.Show("Created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Diary dia = new Diary();
+            dia.account = curent.id;
+            dia.date = DateTime.Today;
+            dia.description = "Create new course " + course.name;
+            diaryDAO.create(dia);
+            GetSource.getTableSource(DiaryDAO.READ_ALL, dgvLog);
 
 
         }
@@ -393,7 +463,12 @@ namespace Fitness.gui
                 a.id = id;
                 courseDAO.update(a);
                 GetSource.getTableSource(CourseDAO.READ_ALL, dgvCourse);
-                MessageBox.Show("Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); Diary dia = new Diary();
+                dia.account = curent.id;
+                dia.date = DateTime.Today;
+                dia.description = "Edited new course " + a.name;
+                diaryDAO.create(dia);
+                GetSource.getTableSource(DiaryDAO.READ_ALL, dgvLog);
             }
         }
 
@@ -529,7 +604,7 @@ namespace Fitness.gui
 
             Bill acc = new Bill();
             acc.staff = curent.id;
-           
+
             if (dgvBill != null && dgvBill.SelectedRows.Count > 0)
             {
                 DataGridViewRow i = dgvBill.SelectedRows[0];
@@ -542,6 +617,68 @@ namespace Fitness.gui
                 MessageBox.Show("Paided", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else MessageBox.Show("Can not paid this ", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            Booked bk = bkDAO.findByID(acc.booked);
+
+
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            AccountView a = new AccountView();
+            a.Show();
+        }
+
+        private void cbbPer_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var id = cbbPer.SelectedValue.ToString();
+          
+
+            int id1 = -1;
+            try
+            {
+                id1 = Convert.ToInt32(id);
+            }
+            catch (Exception ex) { }
+
+
+            if (id1 != -1) { GetSource.getTableSourceFromList<RoleFunc>(rfDAO.getAllByIDRole(id1), dgvPer); }
+        }
+
+        private void dgvPer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (string.Compare(dgvPer.CurrentCell.OwningColumn.Name, "active") == 0)
+            {
+                bool checkBoxStatus = Convert.ToBoolean(dgvPer.CurrentCell.EditedFormattedValue);
+
+                if (checkBoxStatus)
+                {
+                    int id = Convert.ToInt32(dgvPer.CurrentRow.Cells[3].Value);
+                    var idr = cbbPer.SelectedValue.ToString();
+                    int id1 = -1;
+                    try
+                    {
+                        id1 = Convert.ToInt32(idr);
+                    }
+                    catch (Exception ex) { }
+
+                    rfDAO.update(id1, id,1);
+                    GetSource.getTableSourceFromList<RoleFunc>(rfDAO.getAllByIDRole(id1), dgvPer);
+                }
+                else
+                {
+                    int id = Convert.ToInt32(dgvPer.CurrentRow.Cells[3].Value);
+                    var idr = cbbPer.SelectedValue.ToString();
+                    int id1 = -1;
+                    try
+                    {
+                        id1 = Convert.ToInt32(idr);
+                    }
+                    catch (Exception ex) { }
+                    rfDAO.update(id1, id,0);
+                    GetSource.getTableSourceFromList<RoleFunc>(rfDAO.getAllByIDRole(id1), dgvPer);
+                }
+            }
         }
     }
 }
